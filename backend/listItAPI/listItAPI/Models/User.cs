@@ -27,6 +27,7 @@ namespace listItAPI.Models
 
         public virtual ICollection<Product> Products { get; set; }
         public virtual ICollection<Message> Messages { get; set; }
+       
         public virtual ICollection<Bookmark> Bookmarks { get; set; }
 
        

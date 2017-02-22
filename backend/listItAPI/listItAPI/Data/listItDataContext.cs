@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
@@ -21,12 +22,16 @@ namespace listItAPI.Data
 		public IDbSet<Bookmark> Bookmarks { get; set; }
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-			// User relationships
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
+            // User relationships
             // User-Products relationship
-			modelBuilder.Entity<User>()
-				.HasMany(u => u.Products)
-				.WithRequired(p => p.User)
-				.HasForeignKey(p => p.UserId);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Products)
+                .WithRequired(p => p.User)
+                .HasForeignKey(p => p.UserId);
+                
 
             //User-Bookmarks relationship
 			modelBuilder.Entity<User>()
@@ -49,16 +54,24 @@ namespace listItAPI.Data
 
 
             //User-Messages Relationships
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<Message>()
+                .HasRequired(m => m.User1)
+                .WithMany(m => m.Messages)
+                .HasForeignKey(m => m.UserId1);
                 
-                 .HasMany(u => u.Messages)
-                 .WithRequired(m => m.User1)
-                 .HasForeignKey(m => m.User1);
 
-            modelBuilder.Entity<User>()
-                .HasMany(u => u.Messages)
-                .WithRequired(m => m.User2)
-                .HasForeignKey(m =>  m.User2 );
+            modelBuilder.Entity<Message>()
+                .HasRequired(m => m.User2)
+                .WithMany()
+                .HasForeignKey(m => m.UserId2);
+                
+            //.HasMany(u => u.Messages)
+            //.WithRequired(m => m.User1)
+            //.HasForeignKey(m => m.UserId1);
+
+            
+
+
 
 
 
