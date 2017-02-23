@@ -23,6 +23,24 @@ namespace listItAPI.Controllers
             return db.Products;
         }
 
+        //GET: api/Products/Search
+        [Route("api/Products/Search")]
+        [HttpGet]
+        public IQueryable<Product> Search([FromUri]Search fieldsObject)
+        {
+            IQueryable<Product> ResultSet = db.Products;
+            if (fieldsObject.CategoryName != null) { ResultSet = ResultSet.Where(p => p.Category.CategoryName == fieldsObject.CategoryName); }
+            if (fieldsObject.Keyword != null) { ResultSet = ResultSet.Where(p => p.ProductTitle.Contains(fieldsObject.Keyword) || p.Description.Contains(fieldsObject.Keyword)); }
+            if (fieldsObject.Condition != null) { ResultSet = ResultSet.Where(p => p.Condition == fieldsObject.Condition); }
+            if (fieldsObject.MaxPrice != 0) { ResultSet = ResultSet.Where(p => p.Price < fieldsObject.MaxPrice); }
+            if (fieldsObject.MinPrice != 0) { ResultSet = ResultSet.Where(p => p.Price > fieldsObject.MinPrice); }
+          
+            return ResultSet;
+        }
+
+
+
+
         // GET: api/Products/5
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProduct(int id)
@@ -35,6 +53,8 @@ namespace listItAPI.Controllers
 
             return Ok(product);
         }
+
+    
 
         // PUT: api/Products/5
         [ResponseType(typeof(void))]

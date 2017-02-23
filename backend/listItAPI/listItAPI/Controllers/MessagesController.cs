@@ -35,6 +35,16 @@ namespace listItAPI.Controllers
 
             return Ok(message);
         }
+        // GET: api/Messages/Chats20
+        [Route("api/Messages/Chats20")]
+        public IQueryable<Chat> GetChats20(int MessageId)
+        {
+            var top20Chats = db.Chats.Where(m => m.Message.MessageId == MessageId);
+             var results=   top20Chats.OrderByDescending(x => x.DateSent).Take(20);
+            //var results = db.Messages.Where(m => m.MessageId == MessageId);
+
+            return results;
+        }
 
         // PUT: api/Messages/5
         [ResponseType(typeof(void))]

@@ -13,6 +13,6 @@ namespace listItAPI.Models
         public  DateTime DateSent { get; set; }
         public  string Subject { get; set; }
         public  string Content { get; set; }
-        public Message Message { get; set; }
+        public virtual Message Message { get; set; }
     }
 }

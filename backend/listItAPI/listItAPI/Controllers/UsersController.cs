@@ -94,6 +94,15 @@ namespace listItAPI.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = user.UserId }, user);
         }
+        // POST: api/Users/SignIn
+        [Route("api/Users/SignIn")]
+        [HttpPost]
+        [ResponseType(typeof(User))]
+        public IHttpActionResult SignIn(LogIn logIn)
+        {
+            var token = db.Users.Where(u => u.Email == logIn.Email && u.Password == logIn.Password);
+            return Ok(token);
+        }
 
         // DELETE: api/Users/5
         [ResponseType(typeof(User))]

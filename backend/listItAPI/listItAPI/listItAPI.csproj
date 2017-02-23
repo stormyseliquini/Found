@@ -120,12 +120,30 @@
     <Compile Include="Migrations\201702221959237_second.Designer.cs">
       <DependentUpon>201702221959237_second.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702222301081_third.cs" />
+    <Compile Include="Migrations\201702222301081_third.Designer.cs">
+      <DependentUpon>201702222301081_third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702222311487_third1.cs" />
+    <Compile Include="Migrations\201702222311487_third1.Designer.cs">
+      <DependentUpon>201702222311487_third1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702222332057_fourth.cs" />
+    <Compile Include="Migrations\201702222332057_fourth.Designer.cs">
+      <DependentUpon>201702222332057_fourth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702222354230_signIn.cs" />
+    <Compile Include="Migrations\201702222354230_signIn.Designer.cs">
+      <DependentUpon>201702222354230_signIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Chat.cs" />
+    <Compile Include="Models\LogIn.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Search.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -147,6 +165,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702221959237_second.resx">
       <DependentUpon>201702221959237_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702222301081_third.resx">
+      <DependentUpon>201702222301081_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702222311487_third1.resx">
+      <DependentUpon>201702222311487_third1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702222332057_fourth.resx">
+      <DependentUpon>201702222332057_fourth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702222354230_signIn.resx">
+      <DependentUpon>201702222354230_signIn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

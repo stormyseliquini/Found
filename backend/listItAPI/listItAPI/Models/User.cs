@@ -8,7 +8,7 @@ namespace listItAPI.Models
 {
     public class User
     {
-        [Required]
+       
         public  int UserId { get; set; }
         [Required]
         public  string FirstName { get; set; }
