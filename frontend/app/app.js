@@ -10,33 +10,55 @@
             appId: "1181751575274609",
             apiVersion: "v2.8"
         });
-        $urlRouterProvider.otherwise("/example");
+        $urlRouterProvider.otherwise("/home");
 
         $stateProvider
-            .state('example', {
-                url: '/example',
-                templateUrl: "app/example/example.html"
-                    // controller: "searchController",
-                    // controllerAs: "vm"
+            .state('home', {
+                url: '/home',
+                templateUrl: 'app/partials/home.html'
+            })
+
+
+        .state('signIn', {
+                url: '/signIn',
+                templateUrl: "app/partials/signIn.html",
+                controller: "signInController",
+                controllerAs: "si"
+            })
+            .state('register', {
+                url: '/register',
+                templateUrl: "app/partials/register.html"
+                    // controller: "signInController",
+                    // controllerAs: "si"
 
             })
+            .state('profile', {
+                url: '/profile',
+                templateUrl: "app/partials/profile.html"
+                    // controller: "signInController",
+                    // controllerAs: "si"
+
+            })
+            .state('messages', {
+                url: '/messages',
+                templateUrl: "app/partials/messages.html"
+                    // controller: "signInController",
+                    // controllerAs: "si"
+
+            })
+            .state('search', {
+                url: '/search',
+                templateUrl: "app/partials/search.html"
+                    // controller: "signInController",
+                    // controllerAs: "si"
+
+            })
+
 
 
     })
 
 
 
-    .controller('myCtrl', function($scope, socialLoginService) {
-        $scope.signout = function() {
-            socialLoginService.logout();
-        }
-        $scope.$on('event:social-sign-in-success', (event, userDetails) => {
-            $scope.result = userDetails;
-            $scope.$apply();
-        })
-        $scope.$on('event:social-sign-out-success', function(event, userDetails) {
-            $scope.result = userDetails;
-        })
 
-    });
 })();

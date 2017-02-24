@@ -1,35 +1,46 @@
 {
-    "name": "frontend",
-    "description": "group project",
-    "main": "clear",
-    "authors": [
-        "stormy seliquini <stormyseliquini3of3@gmail.com>"
-    ],
-    "license": "MIT",
-    "homepage": "",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "angular": "^1.6.2",
-        "angular-ui-router": "^0.4.2",
-        "ngSweetAlert": "^1.1.2",
-        "bootstrap": "^3.3.7",
-        "angular-local-storage": "^0.5.2",
-        "animate.css": "^3.5.2",
-        "components-font-awesome": "^4.7.0",
-        "angular-filepicker": "^1.1.4",
-        "angularjs-social-login": "^2.4.5"
-    },
-    "overrides": {
-        "bootstrap": {
-            "main": [
-                "dist/css/bootstrap.css"
-            ]
-        }
+  "name": "frontend",
+  "description": "group project",
+  "main": "clear",
+  "authors": [
+    "stormy seliquini <stormyseliquini3of3@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-ui-router": "^0.4.2",
+    "ngSweetAlert": "^1.1.2",
+    "bootstrap": "^3.3.7",
+    "angular-local-storage": "^0.5.2",
+    "animate.css": "^3.5.2",
+    "components-font-awesome": "^4.7.0",
+    "angular-filepicker": "^1.1.4",
+    "angularjs-social-login": "^2.4.5",
+    "lobster": "https://google-fonts.azurewebsites.net/googleFonts/lobster?family=Lobster",
+    "openSans": "https://google-fonts.azurewebsites.net/googleFonts/openSans?family=Open+Sans",
+    "bowlbyOneSC": "https://google-fonts.azurewebsites.net/googleFonts/bowlbyOneSC?family=Bowlby+One+SC",
+    "ubuntu": "https://google-fonts.azurewebsites.net/googleFonts/ubuntu?family=Ubuntu",
+    "oswald": "https://google-fonts.azurewebsites.net/googleFonts/oswald?family=Oswald",
+    "raleway": "https://google-fonts.azurewebsites.net/googleFonts/raleway?family=Raleway",
+    "pacifico": "https://google-fonts.azurewebsites.net/googleFonts/pacifico?family=Pacifico",
+    "josefinSans": "https://google-fonts.azurewebsites.net/googleFonts/josefinSans?family=Josefin+Sans",
+    "amaticSC": "https://google-fonts.azurewebsites.net/googleFonts/amaticSC?family=Amatic+SC",
+    "alegreya": "https://google-fonts.azurewebsites.net/googleFonts/alegreya?family=Alegreya",
+    "lato": "https://google-fonts.azurewebsites.net/googleFonts/lato?family=Lato"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css"
+      ]
     }
+  }
 }

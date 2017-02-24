@@ -1,0 +1,80 @@
+img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: Raleway, sans-serif;
+}
+
+.main-header {
+    height: 800px;
+    background: url('/images/josh-pepper-71388.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.title {
+    color: white;
+    font-size: 9em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .8);
+    margin-left: -35%;
+}
+
+#spanID {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+/* Remove margins and padding from the list, and add a black background color */
+
+ul.topnav {
+    font-family: Raleway, sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+
+/* Float the list items side by side */
+
+ul.topnav #homeIcon {
+    float: left;
+}
+
+ul.topnav #rightAlign {
+    float: right;
+}
+
+
+/* Style the links inside the list items */
+
+ul.topnav li a {
+    display: inline-block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+
+/* Change background color of links on hover */
+
+ul.topnav li a:hover {
+    background-color: rgba(242, 247, 248, 0.7);
+}
+
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+
+ul.topnav li.icon {
+    display: none;
+}
+
+.container-fluid {
+    padding: 0;
+}
