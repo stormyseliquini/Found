@@ -136,6 +136,10 @@
     <Compile Include="Migrations\201702222354230_signIn.Designer.cs">
       <DependentUpon>201702222354230_signIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702241948503_sprint2.cs" />
+    <Compile Include="Migrations\201702241948503_sprint2.Designer.cs">
+      <DependentUpon>201702241948503_sprint2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\Category.cs" />
@@ -177,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702222354230_signIn.resx">
       <DependentUpon>201702222354230_signIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702241948503_sprint2.resx">
+      <DependentUpon>201702241948503_sprint2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

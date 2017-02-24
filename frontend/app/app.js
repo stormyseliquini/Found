@@ -2,7 +2,7 @@
     'use strict';
 
     var listIt = angular.module('listIt', ['ui.router', 'LocalStorageModule', 'socialLogin'])
-        .value('backendUrl', 'http://localhost:53466/api/');
+        .value('backendUrl', 'http://localhost:57938//api/')
 
     listIt.config(function($stateProvider, $urlRouterProvider, socialProvider) {
 
@@ -27,9 +27,9 @@
             })
             .state('register', {
                 url: '/register',
-                templateUrl: "app/partials/register.html"
-                    // controller: "signInController",
-                    // controllerAs: "si"
+                templateUrl: "app/partials/register.html",
+                controller: "registerController",
+                controllerAs: "r"
 
             })
             .state('profile', {

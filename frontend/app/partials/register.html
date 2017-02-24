@@ -1,2 +1,28 @@
-<div>hey</div>
-<div ui-sref="home"></div>
+<div ui-sref="home">
+</div>
+<div class="form">
+    <div>
+        <label for="emailInput">Email</label>
+        <input name="emailInput" type="email" placeholder="email" ng-model="r.email">
+    </div>
+    <div>
+        <label for="userName">User Name</label>
+        <input name="userName" type="text" placeholder="user name" ng-model="r.userName">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input name="password" type="password" placeholder="password" ng-model="r.password">
+    </div>
+    <div>
+        <label for="passwordConfirm">Confirm Password</label>
+        <input name="passwordConfirm" type="password" placeholder="password confirmation" ng-model="r.passwordConfirm">
+    </div>
+    <div>
+        <input type="button" class="btn btn-default" value="Submit" ng-click="r.addUser()">
+    </div>
+</div>
+<div>
+    <button fb-login type="button" ng-click="r.registerFacebook()">facebook</button>
+    <button ng-click="r.signout()" type="button" target="_top">signout</button>
+    <h4>result: {{r.result | json}}</h4>
+</div>

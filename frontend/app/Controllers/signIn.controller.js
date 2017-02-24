@@ -23,7 +23,7 @@
         }
         $rootScope.$on('event:social-sign-in-success', (event, userDetails) => {
             si.result = userDetails;
-            si.$apply();
+            //si.$apply();
         })
         $rootScope.$on('event:social-sign-out-success', function(event, userDetails) {
             si.result = userDetails;
