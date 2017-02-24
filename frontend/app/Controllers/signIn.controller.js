@@ -5,16 +5,33 @@
         .module('listIt')
         .controller('signInController', signInController);
 
-    signInController.$inject = ['socialLoginService', '$rootScope'];
+    signInController.$inject = ['socialLoginService', '$rootScope', 'signInFactory'];
 
     /* @ngInject */
-    function signInController(socialLoginService, $rootScope) {
+    function signInController(socialLoginService, $rootScope, signInFactory) {
         var si = this;
         si.title = 'signInController';
 
 
 
         ////////////////
+        si.signIn = function() {
+                var signInInfo = {
+                    "Email": si.email,
+                    "Password": si.password
+                }
+
+                signInFactory.signInCheck(signInInfo)
+                    .then(
+                        function(response) {
+                            console.log(response);
+                        },
+                        function(error) {
+                            console.log(error);
+                        }
+                    ) //end of then()
+
+            } //end of signIn function
 
 
 

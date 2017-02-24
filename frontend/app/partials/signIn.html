@@ -1,6 +1,33 @@
 <div ui-sref="home"></div>
-<div>
-    <button fb-login type="button">facebook</button>
-    <button ng-click="si.signout()" type="button" target="_top">signout</button>
-    <h4>result: {{si.result}}</h4>
+<div class="form-group">
+    <div class="col-sm-12 text-center">
+        <div>
+            <div>
+                <label for="Email">Email</label>
+            </div>
+            <div>
+                <input name="Email" type="email" placeholder="Email" ng-model="si.email">
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="Password">Password</label>
+            </div>
+            <div>
+                <input name="Password" type="password" placeholder="Password" ng-model="si.password">
+            </div>
+        </div>
+        <div>
+            <div>
+                <br>
+                <button class="btn btn-info" ng-click="si.signIn()">Sign In</button>
+            </div>
+        </div>
+        <div>
+            <div>
+                <br>
+                <button fb-login type="button" class="btn btn-primary">Sign In With Facebook</button>
+            </div>
+        </div>
+    </div>
 </div>
