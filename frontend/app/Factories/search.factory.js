@@ -3,27 +3,26 @@
 
     angular
         .module('listIt')
-        .factory('registerFactory', registerFactory);
+        .factory('searchFactory', searchFactory);
 
-    registerFactory.$inject = ['$http', '$q', 'backendUrl'];
+    searchFactory.$inject = ['$http', '$q', 'backendUrl'];
 
     /* @ngInject */
-    function registerFactory($http, $q, backendUrl) {
+    function searchFactory($http, $q, backendUrl) {
         var service = {
-            addUser: addUser,
-            getUser: getUser
+            searchItems: searchItems,
+            getDetails: getDetails
         };
         return service;
 
         ////////////////
 
-        function addUser(data) {
+        function searchItems(data) {
             var defer = $q.defer();
             $http({
-                method: 'POST',
-                url: backendUrl + 'Users',
-                data: data
-
+                method: 'GET',
+                url: backendUrl + "Products/Search",
+                params: data
             }).then(function(response) {
                 if (typeof response.data === 'object') {
 
@@ -40,16 +39,17 @@
             });
 
             return defer.promise;
+
+
+
         }
 
-        function getUser(email) {
+
+        function getDetails(id) {
             var defer = $q.defer();
             $http({
                 method: 'GET',
-                url: backendUrl + 'Users/email',
-                params: {
-                    'Email': email
-                }
+                url: backendUrl + "Products/" + id
 
             }).then(function(response) {
                 if (typeof response.data === 'object') {
@@ -70,5 +70,4 @@
         }
 
     }
-
 })();

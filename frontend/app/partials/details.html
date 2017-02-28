@@ -1,0 +1,24 @@
+<div class="container">
+    <div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel panel-heading ">{{d.detailResponse.productTitle}}</div>
+                <div class="panel-body">
+                    <div>
+                        <img ng-src="{{d.detailResponse.productImage}}">
+                    </div>
+                    <div>
+                        <p>Product Description:{{d.detailResponse.description}}</p>
+                        <p>Condition:{{d.detailResponse.condition}}</p>
+                        <p>Price: ${{d.detailResponse.price}}</p>
+                        <p>Category: {{d.detailResponse.category.categoryName}}</p>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button ng-click="d.detailToMessage()">Contact User</button>
+                </div>
+            </div>
+        </div>
+        <!--/.sidebar-offcanvas-->
+    </div>
+</div>

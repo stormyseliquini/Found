@@ -5,10 +5,10 @@
         .module('listIt')
         .controller('registerController', registerController);
 
-    registerController.$inject = ['registerFactory', '$rootScope'];
+    registerController.$inject = ['localStorageService', '$rootScope', '$state'];
 
     /* @ngInject */
-    function registerController(registerFactory, $rootScope) {
+    function registerController(localStorageService, $rootScope, $state) {
         var r = this;
         r.title = 'registerController';
 
@@ -17,6 +17,7 @@
         ////////////////
 
         r.addUser = function(registerObject) {
+            var email = r.email;
             var registerObject = {
                 'UserName': r.userName,
                 'Email': r.email,
@@ -26,11 +27,23 @@
                 console.log("wRONG-ooooo");
 
             } else {
-                registerFactory.addUser(registerObject).then(function(response) {
-                    console.log(response)
-                });
-            }
+                localStorageService.getUser(email).then(function(response) {
+                    if (response.data !== null) {
 
+                        console.log("already in use douche")
+                    } else {
+                        localStorageService.addUser(registerObject).then(function(response) {
+                            console.log(response);
+                            localStorageService.set('isSignedIn', true)
+                            $state.go('home')
+                        });
+
+                    }
+
+
+                })
+
+            }
 
         }
 
@@ -51,14 +64,29 @@
                 var userName = userDetails.name.replace(/\s/g, '');
                 var email = userDetails.email;
                 var password = userDetails.uid;
+
                 var facebookInfo = {
                     'UserName': userName,
                     'Email': email,
+                    'FbPassword': password,
                     'Password': password
                 }
-                registerFactory.addUser(facebookInfo).then(function(response) {
-                    console.log(response);
-                });
+                localStorageService.getUser(email).then(function(response) {
+                    if (response.data !== null) {
+
+                        console.log("already in use douche")
+                    } else {
+                        localStorageService.addUser(facebookInfo).then(function(response) {
+                            console.log(response);
+                            localStorageService.set('isSignedIn', true)
+                            $state.go('home')
+                        });
+
+                    }
+
+
+                })
+
             }
             r.facebookRegister();
 

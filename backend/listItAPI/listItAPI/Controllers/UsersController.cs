@@ -94,13 +94,13 @@ namespace listItAPI.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = user.UserId }, user);
         }
-        // POST: api/Users/SignIn
+        // POST/Get: api/Users/SignIn
         [Route("api/Users/SignIn")]
         [HttpPost]
         [ResponseType(typeof(User))]
         public IHttpActionResult SignIn(LogIn logIn)
         {
-            var token = db.Users.Where(u => u.Email == logIn.Email && u.Password == logIn.Password);
+            var token = db.Users.Where(u => u.Email == logIn.Email && (u.Password == logIn.Password || u.FbPassword == logIn.Password));
             return Ok(token);
         }
 

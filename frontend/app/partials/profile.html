@@ -1,1 +1,31 @@
 <div ui-sref="home"></div>
+<button ng-hide="editing" ng-click="editing =! editing">Click to Add Product</button>
+<div ng-blur="editing =! editing" ng-show="editing">
+    <input type="text" ng-model="u.title">name
+    <input type="text" ng-model="u.description">description
+    <select ng-model="u.condition">
+        <option value="Poor">Poor</option>
+        <option value="Fair">Fair</option>
+        <option value="Good">Good</option>
+        <option value="Like-New">Like-New</option>
+        <option value="Excellent">Excellent</option>
+        <option value="New">New</option>
+    </select>
+    <select ng-model="u.categories">
+        <option value="1">Antique</option>
+        <option value="2">Appliances</option>
+        <option value="3">Bikes</option>
+        <option value="4">Boats</option>
+        <option value="5">Cars</option>
+        <option value="6">Books</option>
+        <option value="7">Phones</option>
+        <option value="8">Video Games</option>
+        <option value="9">Electronics</option>
+        <option value="10">Wanted</option>
+        <option value="11">Other</option>
+    </select>
+    <input type="number" ng-model="u.price">price
+    <!--   <input type="filepicker-dragdrop" data-fp-multiple="true" name="whatever" data-fp-services="computer,facebook,webcam,box" ng-model="u.photoUrl" /> -->
+    <button ng-click="u.addProduct()">add</button>
+</div>
+</div>
