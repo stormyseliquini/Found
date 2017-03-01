@@ -144,6 +144,10 @@
     <Compile Include="Migrations\201702271811330_facebookPasswordCheck.Designer.cs">
       <DependentUpon>201702271811330_facebookPasswordCheck.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702282250019_doubleprice.cs" />
+    <Compile Include="Migrations\201702282250019_doubleprice.Designer.cs">
+      <DependentUpon>201702282250019_doubleprice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\Category.cs" />
@@ -191,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702271811330_facebookPasswordCheck.resx">
       <DependentUpon>201702271811330_facebookPasswordCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702282250019_doubleprice.resx">
+      <DependentUpon>201702282250019_doubleprice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

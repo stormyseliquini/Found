@@ -32,13 +32,21 @@ h1 {
     padding: 7%;
 }
 
-footer {
-    padding-top: 1%;
-    padding-bottom: 1%;
+
+/**
+ * Footer Styles
+ */
+
+.footer {
+    position: absolute;
+    background-color: rgb(242, 247, 248);
     text-align: center;
-    display: block;
-    float: clear;
-    background-color: rgb(242, 247, 248)
+}
+
+#footerTextLeft {
+    vertical-align: center;
+    background-color: rgb(242, 247, 248);
+    padding: 1rem;
 }
 
 #fbIcon {

@@ -21,7 +21,7 @@ namespace listItAPI.Models
         
         public  string ProductImage { get; set; }
         [Required]
-        public  int Price { get; set; }
+        public  double Price { get; set; }
         public virtual ICollection<Bookmark> Bookmarks { get; set; }
         public virtual User User { get; set; }
         public virtual Category Category { get; set; }

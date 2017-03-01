@@ -11,7 +11,8 @@
     function localStorageFactory(localStorageService) {
         var service = {
             setLocalStorage: setLocalStorage,
-            getLocalStorage: getLocalStorage
+            getLocalStorage: getLocalStorage,
+            logout: logout
         };
         return service;
 
@@ -24,6 +25,10 @@
         function getLocalStorage(key) {
             return localStorageService.get(key);
 
+        }
+
+        function logout() {
+            return localStorageService.clearAll();
         }
     }
 })();

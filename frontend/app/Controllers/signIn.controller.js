@@ -28,11 +28,10 @@
                             if (response.data[0] !== undefined) {
                                 console.log("success")
                                 var responseData = response.data[0]
-                                localStorageService.set('isSignedIn', true)
-                                localStorageService.set('userEmail', responseData.email)
 
-                                setStorage('email', response.email);
-                                setStorage('userId', response.userId);
+
+                                setStorage('email', responseData.email);
+                                setStorage('userId', responseData.userId);
 
 
                                 $state.go('home');
@@ -57,7 +56,10 @@
 
 
         si.signout = function() {
-            socialLoginService.logout();
+            localStorageFactory.logout();
+            $state.go('home')
+
+
         }
         $rootScope.$on('event:social-sign-in-success', (event, userDetails) => {
             si.result = userDetails;

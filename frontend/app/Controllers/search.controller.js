@@ -18,7 +18,7 @@
 
         s.searchProducts = function() {
             var data = {
-                'CategoryName': s.category,
+                'CategoryName': s.categories,
                 'Keyword': s.keyword,
                 'Condition': s.condition,
                 'MaxPrice': s.maxPrice,
