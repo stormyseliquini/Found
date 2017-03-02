@@ -27,6 +27,7 @@
 
                             if (response.data[0] !== undefined) {
                                 console.log("success")
+                                console.log(response.data)
                                 var responseData = response.data[0]
 
 
@@ -76,6 +77,7 @@
                 signInFactory.signInCheck(facebookInfo).then(function(response) {
                     if (response.data[0] !== undefined) {
                         console.log("success")
+                        console.log(response)
                         localStorageService.set(responseData.userId)
                         $state.go('home')
                         console.log(isSignedIn)

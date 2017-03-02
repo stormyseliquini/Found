@@ -148,6 +148,10 @@
     <Compile Include="Migrations\201702282250019_doubleprice.Designer.cs">
       <DependentUpon>201702282250019_doubleprice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703012220145_undopictable.cs" />
+    <Compile Include="Migrations\201703012220145_undopictable.Designer.cs">
+      <DependentUpon>201703012220145_undopictable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bookmark.cs" />
     <Compile Include="Models\Category.cs" />
@@ -170,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Migrations\201703012219483_undo3\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702221851193_first.resx">
@@ -198,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702282250019_doubleprice.resx">
       <DependentUpon>201702282250019_doubleprice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703012220145_undopictable.resx">
+      <DependentUpon>201703012220145_undopictable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

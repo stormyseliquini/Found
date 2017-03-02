@@ -32,26 +32,7 @@ h1 {
     padding: 7%;
 }
 
-
-/**
- * Footer Styles
- */
-
-.footer {
-    position: absolute;
-    background-color: rgb(242, 247, 248);
-    text-align: center;
-}
-
-#footerTextLeft {
-    vertical-align: center;
-    background-color: rgb(242, 247, 248);
-    padding: 1rem;
-}
-
-#fbIcon {
-    padding-left: 80%;
-}
+#instaIcon {}
 
 #about {
     margin-left: -10%;

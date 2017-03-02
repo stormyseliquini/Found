@@ -64,15 +64,10 @@ namespace listItAPI.Data
                 .HasRequired(m => m.User2)
                 .WithMany()
                 .HasForeignKey(m => m.UserId2);
-                
+
             //.HasMany(u => u.Messages)
             //.WithRequired(m => m.User1)
             //.HasForeignKey(m => m.UserId1);
-
-            
-
-
-
 
 
 

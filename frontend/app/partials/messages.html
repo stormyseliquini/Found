@@ -1,3 +1,22 @@
-<div>
-    {{userId}}
+<div class="container" ng-init="m.getMessages()">
+    <div class="row">
+        <div class="col-xs-2" ">
+            <ul ng-repeat="data in m.response ">
+                <li>
+                    <button ng-click="m.getChat(data.messageId) ">{{data.user1.firstName}},{{data.user2.firstName}}</button>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-10 ">
+        <div  ng-repeat="data in m.chatResponse ">
+			<p>subject: {{data.subject}}, message: {{data.content}}, sent on: {{data.dateSent}}</p>
+			</div>
+			  <div  ng-hide="m.hide "  >
+        <input type="text " placeholder="subject " ng-model="m.subject " >
+        <input type="text " placeholder="message " ng-model="m.message ">
+        <button ng-click="m.createChat() ">send</button>
+        </div>
+        </div>
+
+    </div>
 </div>

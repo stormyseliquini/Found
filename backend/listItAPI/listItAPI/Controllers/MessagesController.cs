@@ -22,7 +22,12 @@ namespace listItAPI.Controllers
         {
             return db.Messages;
         }
-
+        [Route("api/MessagebyId")]
+        public IQueryable<Message> GetMessagesbyId(int userId)
+        {
+            var messageIdResults = db.Messages.Where(m => m.UserId1 == userId || m.UserId2 == userId);
+            return messageIdResults;
+        }
         // GET: api/Messages/5
         [ResponseType(typeof(Message))]
         public IHttpActionResult GetMessage(int id)

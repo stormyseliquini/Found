@@ -26,7 +26,7 @@
     <!-- endinject -->
 </head>
 
-<body>
+<body class="frame">
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -48,13 +48,15 @@
             <li id="homeIcon"><a ui-sref="home">home</a></li>
         </ul>
     </div>
-    <div ui-view></div>
-    <div>
-        <footer>
-            <div id="footerTextLeft">&copy; 2017 Found INC.
-                <a id="fbIcon" href="https://www.facebook.com/Foundcom-270446383391389/"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a> &nbsp; &nbsp; &nbsp;<a id="instaIcon" href="https://www.instagram.com"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-            </div>
-        </footer>
+    <div ui-view>
+    </div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text pull-left">©2017 Found INC.
+                <a href="https://www.facebook.com/Foundcom-270446383391389/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                <a href=href="https://www.instagram.com" target="_blank" "><i id="instaIcon " class="fa fa-instagram fa-2x " aria-hidden="true "></i></a>
+            </p>
+        </div>
     </div>
     <!-- inject:js -->
     <script src="/app/app.js"></script>
