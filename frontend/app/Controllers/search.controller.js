@@ -5,10 +5,10 @@
         .module('listIt')
         .controller('searchController', searchController);
 
-    searchController.$inject = ['searchFactory', '$state'];
+    searchController.$inject = ['searchFactory', '$state', 'localStorageFactory'];
 
     /* @ngInject */
-    function searchController(searchFactory, $state) {
+    function searchController(searchFactory, $state, localStorageFactory) {
         var s = this;
         s.title = 'searchController';
 
@@ -25,6 +25,15 @@
                 'MinPrice': s.minPrice
             }
             searchFactory.searchItems(data).then(function(response) {
+                s.response = response.data;
+                console.log(response);
+            })
+        }
+        s.searchProfileProducts = function() {
+            var data = {
+                UserId: localStorageFactory.getLocalStorage('userId')
+            }
+            searchFactory.searchProfileItems(data).then(function(response) {
                 s.response = response.data;
                 console.log(response);
             })

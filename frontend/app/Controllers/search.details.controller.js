@@ -5,10 +5,10 @@
         .module('listIt')
         .controller('detailsController', detailsController);
 
-    detailsController.$inject = ['searchFactory', '$stateParams', '$state'];
+    detailsController.$inject = ['searchFactory', '$stateParams', '$state', 'messagesFactory', 'localStorageFactory'];
 
     /* @ngInject */
-    function detailsController(searchFactory, $stateParams, $state) {
+    function detailsController(searchFactory, $stateParams, $state, messagesFactory, localStorageFactory) {
         var d = this;
         d.title = 'detailsController';
         d.detailResponse = {};
@@ -30,8 +30,22 @@
         };
         getDetails();
 
-        d.detailToMessage = function() {
-            $state.go('messages', { userId: d.detailResponse.userId })
+        d.detailToMessage = function(productUser) {
+
+            var users = {
+                UserId1: localStorageFactory.getLocalStorage("userId"),
+                UserId2: productUser
+            }
+
+            messagesFactory.createMessage(users).then(function(response) {
+                    console.log(response)
+                    var createdMessage = response.data
+                    $state.go('messages', createdMessage)
+                },
+                function(error) {
+                    console.log(error)
+                })
+
 
 
 

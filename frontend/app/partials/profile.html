@@ -28,4 +28,93 @@
     <input type="filepicker-dragdrop" data-fp-multiple="true" name="whatever" data-fp-services="computer,facebook,webcam,box" ng-model="u.photoUrl" />
     <button ng-click="u.addProduct()">add</button>
 </div>
+<div class="container" ng-controller="searchController as s" ng-init="s.searchProfileProducts()">
+    <h1>Your Products!</h1>
+    <div>
+        <div class="col-md-4" ng-repeat="x in s.response">
+            <div class="panel panel-default">
+                <div class="panel panel-heading ">{{x.productTitle}}</div>
+                <div class="panel-body">
+                    <div>
+                        <img ng-src="{{x.productImage}}">
+                        <p>Product Description:{{x.description}}</p>
+                        <p>Condition:{{x.condition}}</p>
+                        <p>Price: ${{x.price}}</p>
+                        <p>Category: {{x.category.categoryName}}</p>
+                    </div>
+                </div>
+                <div ng-blur="editProduct =! editProduct" ng-show="editProduct">
+                    <div>
+                        Title
+                        <input type="text" ng-model="u.editProductTitle">
+                    </div>
+                    <div>
+                        Description
+                        <input type="text" ng-model="u.editDescription">
+                    </div>
+                    <div>
+                        Price
+                        <input type="number" ng-model="u.editPrice">
+                    </div>
+                    <div>
+                        Condition
+                        <select ng-model="u.editCondition">
+                            <option value="Poor">Poor</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Good">Good</option>
+                            <option value="Like-New">Like-New</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="New">New</option>
+                        </select>
+                    </div>
+                    <div>
+                        Category
+                        <select ng-model="u.editCategories">
+                            <option value="1">Antique</option>
+                            <option value="2">Appliances</option>
+                            <option value="3">Bikes</option>
+                            <option value="4">Boats</option>
+                            <option value="5">Cars</option>
+                            <option value="6">Books</option>
+                            <option value="7">Phones</option>
+                            <option value="8">Video Games</option>
+                            <option value="9">Electronics</option>
+                            <option value="10">Wanted</option>
+                            <option value="11">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        Image
+                        <input type="filepicker-dragdrop" data-fp-multiple="true" name="whatever" data-fp-services="computer,facebook,webcam,box" ng-model="u.editPhotoUrl" />
+                    </div>
+                    <button ng-click="u.editProduct(x.productId);s.searchProfileProducts()">submit</button>
+                </div>
+                <div class="panel-footer">
+                    <button ng-hide="editProduct" ng-click="editProduct =! editProduct">Edit</button>
+                    <button ng-click="u.deleteProduct(x.productId)">Delete</button>
+                </div>
+            </div>
+        </div>
+        <!--/.sidebar-offcanvas-->
+    </div>
+</div>
+<div class="container" ng-init="u.getBookmarks()">
+    <h1>Your Bookmarks!</h1>
+    <div class="col-md-4" ng-repeat="data in vm.bookmarks">
+        <div class="panel panel-default">
+            <div class="panel panel-heading ">{{data.product.productTitle}}</div>
+            <div class="panel-body">
+                <div>
+                    <img ng-src="{{data.product.productImage}}">
+                    <p>Product Description:{{data.product.description}}</p>
+                    <p>Condition:{{data.product.condition}}</p>
+                    <p>Price: ${{data.product.price}}</p>
+                    <p>Category: {{data.product.category.categoryName}}</p>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button ng-click="u.deleteBookmarks(data.product.productId)">Delete</button>
+            </div>
+        </div>
+    </div>
 </div>

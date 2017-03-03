@@ -33,21 +33,23 @@
             }
             messagesFactory.getChats(messageId).then(function(response) {
                 m.chatResponse = response.data
-                console.log(response.data)
+                console.log(response)
                 m.hide = false
             })
         }
         m.createChat = function() {
 
             var messageId = {
-                MessageId: m.chatResponse[0].messageId,
+                MessageId: $stateParams.messageId,
                 Subject: m.subject,
                 Content: m.message,
                 DateSent: new Date()
             }
+            console.log($stateParams)
             messagesFactory.createChats(messageId).then(function(response) {
                 console.log(response.data)
-                m.getChat(m.chatResponse[0].messageId)
+                m.getChat($stateParams.messageId)
+
             })
 
         }

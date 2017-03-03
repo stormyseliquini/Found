@@ -11,7 +11,8 @@
     function searchFactory($http, $q, backendUrl) {
         var service = {
             searchItems: searchItems,
-            getDetails: getDetails
+            getDetails: getDetails,
+            searchProfileItems: searchProfileItems
         };
         return service;
 
@@ -67,6 +68,33 @@
             });
 
             return defer.promise;
+        }
+
+        function searchProfileItems(data) {
+            var defer = $q.defer();
+            $http({
+                method: 'GET',
+                url: backendUrl + "products/profile",
+                params: data
+            }).then(function(response) {
+                if (typeof response.data === 'object') {
+
+                    defer.resolve(response);
+                } else {
+
+                    defer.reject('no data found :(');
+                }
+            }, function(error) {
+
+                console.log(error);
+                defer.reject(error);
+
+            });
+
+            return defer.promise;
+
+
+
         }
 
     }

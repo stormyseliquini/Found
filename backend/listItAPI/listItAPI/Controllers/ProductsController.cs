@@ -54,8 +54,14 @@ namespace listItAPI.Controllers
             return Ok(product);
         }
 
-    
 
+        // GET: api/Products
+        [Route("api/products/profile")]
+        public IQueryable<Product> GetProfileProducts(int userId)
+        {
+            var results = db.Products.Where(p => p.UserId == userId);
+            return results;
+        }
         // PUT: api/Products/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProduct(int id, Product product)

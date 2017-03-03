@@ -12,11 +12,39 @@
         var service = {
             getMessages: getMessages,
             getChats: getChats,
-            createChats: createChats
+            createChats: createChats,
+            createMessage: createMessage
         };
         return service;
 
         ////////////////
+
+        function createMessage(data) {
+            var defer = $q.defer();
+            $http({
+                method: 'POST',
+                url: backendUrl + "Messages",
+                data: data
+            }).then(function(response) {
+                if (typeof response.data === 'object') {
+
+                    defer.resolve(response);
+                } else {
+
+                    defer.reject('no data found :(');
+                }
+            }, function(error) {
+
+                console.log(error);
+                defer.reject(error);
+
+            });
+
+            return defer.promise;
+
+        }
+
+
 
         function getMessages(data) {
             var defer = $q.defer();

@@ -40,7 +40,7 @@
     <!-- endbower -->
     <div ng-controller="signInController as si">
         <ul class="topnav" id="myTopnav">
-            <li id="rightAlign"><a ng-click="si.signout()">logout</a></li>
+            <li id="rightAlign"><a ng-click="si.signout()" onmouseover="" style="cursor: pointer;">logout</a></li>
             <li id="rightAlign"><a ui-sref="signIn">sign in</a></li>
             <li id="rightAlign"><a ui-sref="register">register</a></li>
             <li id="rightAlign"><a ui-sref="profile">profile</a></li>
@@ -60,6 +60,7 @@
     </div>
     <!-- inject:js -->
     <script src="/app/app.js"></script>
+    <script src="/app/Controllers/bookmarks.controller.js"></script>
     <script src="/app/Controllers/messages.controller.js"></script>
     <script src="/app/Controllers/register.controller.js"></script>
     <script src="/app/Controllers/search.controller.js"></script>
@@ -67,6 +68,7 @@
     <script src="/app/Controllers/signIn.controller.js"></script>
     <script src="/app/Controllers/state.controller.js"></script>
     <script src="/app/Controllers/users.controller.js"></script>
+    <script src="/app/Factories/bookmarks.factory.js"></script>
     <script src="/app/Factories/localStorage.factory.js"></script>
     <script src="/app/Factories/messages.factory.js"></script>
     <script src="/app/Factories/register.factory.js"></script>

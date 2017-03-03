@@ -35,6 +35,12 @@ namespace listItAPI.Controllers
 
             return Ok(bookmark);
         }
+        [Route("api/bookmarks/user")]
+        public IQueryable<Bookmark> GetProfileBookmarks(int userId)
+        {
+            var results = db.Bookmarks.Where(b => b.UserId == userId);
+            return results;
+        }
 
         // PUT: api/Bookmarks/5
         [ResponseType(typeof(void))]
@@ -115,5 +121,16 @@ namespace listItAPI.Controllers
         {
             return db.Bookmarks.Count(e => e.BookmarkId == id) > 0;
         }
+
+        // DELETE: api/Bookmarks/5
+        [Route("api/deleteBookmarks/pId")]
+        [HttpDelete]
+        public IQueryable<Bookmark> DeleteProBookmarks(int productId)
+        {
+            var results = db.Bookmarks.Where(b=>b.ProductId== productId);
+
+            return results;
+        }
     }
 }
+

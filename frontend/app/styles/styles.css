@@ -14,10 +14,10 @@ h1 {
 }
 
 .title {
-    margin-top: 25%;
-    line-height: 117%;
+    margin-top: 24%;
+    line-height: 118%;
     color: white;
-    font-size: 9em;
+    font-size: 8.7em;
     text-transform: uppercase;
     text-shadow: 0 2px 2px rgba(0, 0, 0, .8);
     margin-left: -35%;
@@ -32,7 +32,26 @@ h1 {
     padding: 7%;
 }
 
-#instaIcon {}
+
+/**
+ * Footer Styles
+ */
+
+.footer {
+    position: absolute;
+    background-color: rgb(242, 247, 248);
+    text-align: center;
+}
+
+#footerTextLeft {
+    vertical-align: center;
+    background-color: rgb(242, 247, 248);
+    padding: 1rem;
+}
+
+#fbIcon {
+    padding-left: 80%;
+}
 
 #about {
     margin-left: -10%;
@@ -108,4 +127,105 @@ ul.topnav li.icon {
 
 .container-fluid {
     padding: 0;
+}
+
+
+/*Registration page*/
+
+#registerBox,
+#searchBox,
+#signInframe {
+    background: url('/images/josh-pepper-71388.jpg') no-repeat center;
+    height: 800px;
+    background-size: cover;
+}
+
+#registerLabel,
+#searchLabel,
+#signInLabel,
+label {
+    font-family: Lato;
+    color: #fff;
+    font-weight: 400;
+}
+
+#registrationheade,
+.panel-title,
+#searchLegend {
+    font-family: Raleway;
+    font-size: 4em;
+    font-weight: normal;
+    text-align: center;
+}
+
+#loginbox,
+#signinBox {
+    margin-top: 50px;
+    border-color: rgba(242, 247, 248, 0.7);
+}
+
+#panelBodyDiv {
+    padding-top: 30px;
+    /* font-family: Lato,
+ sans-serif;
+*/
+}
+
+#emailInput,
+#userNameInput,
+#passwordInput,
+#passwordConfrimInput {
+    margin-bottom: 25px;
+}
+
+#registrationHeading,
+#inputRegistration,
+#inputSignIn,
+#signInHeading {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    /* border: none;
+ border-radius: 2
+*/
+}
+
+#buttonsRegistration,
+#buttonSignIn {
+    border: none;
+    font-family: Raleway;
+    background-color: rgba(242, 247, 248, 0.6);
+    margin: 5px;
+}
+
+#buttonsRegistration:hover,
+#buttonSignIn:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.boxtext {
+    background-color: rgba(14, 20, 27, 0.52);
+}
+
+@media (min-width: 992px) grid-framework.less:72 .col-md-offset-3 {
+    margin-left: 9%;
+}
+
+
+/*SEARCH PAGE*/
+
+#searchContainer,
+#searchLegend,
+#signinContianer {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+#signInLegend,
+legend {
+    font-family: Raleway;
+    font-size: 4em;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
 }

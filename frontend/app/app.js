@@ -47,8 +47,9 @@
                     controllerAs: "m",
                     requireAuth: true,
                     params: {
-                        userId: ""
+                        messageId: ""
                     }
+
 
 
                 })

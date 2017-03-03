@@ -1,28 +1,50 @@
-<div ui-sref="home">
-</div>
-<div class="form">
-    <div>
-        <label for="emailInput">Email</label>
-        <input name="emailInput" type="email" placeholder="email" ng-model="r.email">
+<div class="container-fluid" id="registerBox">
+    <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-1">
+        <div class="panel panel-info boxtext">
+            <div id="registrationHeading" class="panel-heading">
+                <div id="registrationheader" class="panel-title">Register</div>
+            </div>
+            <div id="panelBodyDiv" class="panel-body">
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                <form id="loginform" class="form-horizontal" role="form">
+                    <div id="inputFields">
+                        <label id="registerLabel" for="emailInput">Email</label>
+                        <div id="emailInput" class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                            <input id="inputRegistration" name="emailInput" type="email" class="form-control" placeholder="email" ng-model="r.email">
+                        </div>
+                        <div>
+                            <label id="registerLabel" for="userName">User Name</label>
+                            <div id="userNameInput" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="inputRegistration" name="userName" type="text" class="form-control" placeholder="user name" ng-model="r.userName">
+                            </div>
+                        </div>
+                        <div>
+                            <label id="registerLabel" for="password">Password</label>
+                            <div id="passwordInput" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input id="inputRegistration" name="password" type="password" class="form-control" placeholder="password" ng-model="r.password">
+                            </div>
+                        </div>
+                        <div>
+                            <label id="registerLabel" for="passwordConfirm">Confirm Password</label>
+                            <span id="confirmMessage" class="confirmMessage"></span>
+                            <div id="passwordConfrimInput" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input id="inputRegistration" name="passwordConfirm" type="password" class="form-control" placeholder="password confirmation" ng-model="r.passwordConfirm" required="required">
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <button id="buttonsRegistration" fb-login type="button" class="btn btn-default">Click Here to Register With Facebook</button>
+                        </div>
+                        <div>
+                            <input id="buttonsRegistration" type="button" class="btn btn-default" value="Submit" ng-click="r.addUser()">
+                            <button id="buttonsRegistration" ng-click="r.signout()" type="button" class="btn btn-default" target="_top">Signout</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div>
-        <label for="userName">User Name</label>
-        <input name="userName" type="text" placeholder="user name" ng-model="r.userName">
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input name="password" type="password" placeholder="password" ng-model="r.password">
-    </div>
-    <div>
-        <label for="passwordConfirm">Confirm Password</label>
-        <input name="passwordConfirm" type="password" placeholder="password confirmation" ng-model="r.passwordConfirm">
-    </div>
-    <div>
-        <input type="button" class="btn btn-default" value="Submit" ng-click="r.addUser()">
-    </div>
-</div>
-<div>
-    <button fb-login type="button">facebook</button>
-    <button ng-click="r.signout()" type="button" target="_top">signout</button>
-    <h4>result: {{r.result | json}}</h4>
 </div>
