@@ -42,6 +42,7 @@
         <ul class="topnav" id="myTopnav">
             <li id="rightAlign"><a ng-click="si.signout()" onmouseover="" style="cursor: pointer;">logout</a></li>
             <li id="rightAlign"><a ui-sref="signIn">sign in</a></li>
+            <li id="rightAlign"><a ui-sref="search">search</a></li>
             <li id="rightAlign"><a ui-sref="register">register</a></li>
             <li id="rightAlign"><a ui-sref="profile">profile</a></li>
             <li id="rightAlign"><a ui-sref="messages">messages</a></li>
@@ -52,10 +53,13 @@
     </div>
     <div class="navbar navbar-default navbar-fixed-bottom">
         <div class="container">
-            <p class="navbar-text pull-left">©2017 Found INC.
-                <a href="https://www.facebook.com/Foundcom-270446383391389/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
-                <a href=href="https://www.instagram.com" target="_blank" "><i id="instaIcon " class="fa fa-instagram fa-2x " aria-hidden="true "></i></a>
-            </p>
+            <div id="copyRight">
+                <p class="navbar-text pull-left">©2017 Found INC.
+                </p>
+            </div>
+            <div id="iconDiv">
+                <a id="fbicon" href="https://www.facebook.com/Foundcom-270446383391389/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                <a id="instaicon" href=href="https://www.instagram.com" target="_blank" "><i id="instaIcon " class="fa fa-instagram fa-2x " aria-hidden="true "></i></a>
         </div>
     </div>
     <!-- inject:js -->

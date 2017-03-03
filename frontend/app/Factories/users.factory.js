@@ -12,7 +12,9 @@
         var service = {
             addProduct: addProduct,
             editProduct: editProduct,
-            deleteProduct: deleteProduct
+            deleteProduct: deleteProduct,
+            getUser: getUser,
+            updateProfile: updateProfile
         };
         return service;
 
@@ -100,6 +102,62 @@
             return defer.promise;
 
 
+        }
+
+        function getUser(id) {
+            var defer = $q.defer();
+            $http({
+                method: 'GET',
+                url: backendUrl + 'Users/' + id,
+
+
+
+            }).then(function(response) {
+                console.log(response)
+                if (typeof response.data !== null) {
+
+                    defer.resolve(response);
+                } else {
+
+                    defer.reject('no data found :(');
+                }
+            }, function(error) {
+
+                console.log(error);
+                defer.reject(error);
+
+            });
+
+            return defer.promise;
+
+
+        }
+
+        function updateProfile(id, update) {
+            var defer = $q.defer();
+            $http({
+                method: 'PUT',
+                url: backendUrl + 'Users/' + id,
+
+                headers: { 'Content-Type': 'application/json' },
+                data: update
+            }).then(function(response) {
+                console.log(response)
+                if (typeof response.data !== null) {
+
+                    defer.resolve(response);
+                } else {
+
+                    defer.reject('no data found :(');
+                }
+            }, function(error) {
+
+                console.log(error);
+                defer.reject(error);
+
+            });
+
+            return defer.promise;
         }
     }
 })();

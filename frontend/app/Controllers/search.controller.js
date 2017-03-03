@@ -24,10 +24,14 @@
                 'MaxPrice': s.maxPrice,
                 'MinPrice': s.minPrice
             }
-            searchFactory.searchItems(data).then(function(response) {
-                s.response = response.data;
-                console.log(response);
-            })
+            if (data.CategoryName == null && data.Keyword == null && data.Condition == null && data.MaxPrice == null && data.MinPrice == null) {
+                sweetAlert("Oops...", "Please fill at least one field", "error");
+            } else {
+                searchFactory.searchItems(data).then(function(response) {
+                    s.response = response.data;
+                    console.log(response);
+                })
+            }
         }
         s.searchProfileProducts = function() {
             var data = {

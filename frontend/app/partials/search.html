@@ -1,83 +1,88 @@
-<form class="form-horizontal">
-    <fieldset>
-        <!-- Form Name -->
-        <legend>Search for a Product</legend>
-        <!-- Select Basic -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="conditionSelect">Select Condition</label>
-            <div class="col-md-4">
-                <select id="conditionSelect" name="conditionSelect" class="form-control" ng-model="s.condition">
-                    <option value="Poor">Poor</option>
-                    <option value="Fair">Fair</option>
-                    <option value="Good">Good</option>
-                    <option value="Like-New">Like-New</option>
-                    <option value="Excellent">Excellent</option>
-                    <option value="New">New</option>
-                </select>
+<div id="searchBox" class="container-fluid">
+    <div id="searchframe" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-1">
+        <div class="panel panel-info boxtext" id="searcgContianer">
+            <div id="searchHeading" class="panel-heading">
+                <div id="searchHeader" class="panel-title">Search for a Product</div>
             </div>
-        </div>
-        <!-- Select Basic -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="categorySelect">Select Category</label>
-            <div class="col-md-4">
-                <select id="categorySelect" name="categorySelect" class="form-control" ng-model="s.categories">
-                    <option value="Antique">Antique</option>
-                    <option value="Appliances">Appliances</option>
-                    <option value="Bikes">Bikes</option>
-                    <option value="Boats">Boats</option>
-                    <option value="Cars">Cars</option>
-                    <option value="Books">Books</option>
-                    <option value="Phones">Phones</option>
-                    <option value="Video Games">Video Games</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Wanted">Wanted</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-        </div>
-        <!-- Search input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="keyWords">Search Keywords</label>
-            <div class="col-md-4">
-                <input id="keyWords" name="keyWords" type="search" placeholder="search" class="form-control input-md" ng-model="s.keyword">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="minRent">Min Rent</label>
-            <div class="col-md-4">
-                <input id="minRent" name="minRent" type="number
-" placeholder="minRent" class="form-control input-md" ng-model="s.minPrice">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="maxPrice">Max Rent</label>
-            <div class="col-md-4">
-                <input id="maxPrice" name="maxPrice" type="number" placeholder="search" class="form-control input-md" ng-model="s.maxPrice">
-            </div>
-        </div>
-        <!-- Button -->
-        <div class="form-group">
-            <div class="col-md-4">
-                <button id="searchbutton" name="Submit" class="btn btn-default" ng-click="s.searchProducts()">Search</button>
-            </div>
-        </div>
-    </fieldset>
-</form>
-<div class="container">
-    <div>
-        <div class="col-md-4" ng-repeat="x in s.response">
-            <div class="panel panel-default">
-                <div class="panel panel-heading ">{{x.productTitle}}</div>
-                <div class="panel-body">
+            <div id="panelBodyDiv" class="panel-body">
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                <form class="form-horizontal" role="form">
+                    <div id="inputFields">
+                        <label id="searchLabel" for="conditionSelect">Select Condition</label>
+                        <div>
+                            <select id="inputSearch" name="conditionSelect" class="form-control" ng-model="s.condition">
+                                <option value="Poor">Poor</option>
+                                <option value="Fair">Fair</option>
+                                <option value="Good">Good</option>
+                                <option value="Like-New">Like-New</option>
+                                <option value="Excellent">Excellent</option>
+                                <option value="New">New</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Select Basic -->
+                    <div id="inputFields">
+                        <label id="searchLabel" for="categorySelect">Select Category</label>
+                        <div>
+                            <select id="inputSearch" name="categorySelect" class="form-control" ng-model="s.categories">
+                                <option value="Antique">Antique</option>
+                                <option value="Appliances">Appliances</option>
+                                <option value="Bikes">Bikes</option>
+                                <option value="Boats">Boats</option>
+                                <option value="Cars">Cars</option>
+                                <option value="Books">Books</option>
+                                <option value="Phones">Phones</option>
+                                <option value="Video Games">Video Games</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Wanted">Wanted</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Search input-->
+                    <div id="inputFields">
+                        <label id="searchLabel" for="keyWords">Search Keywords</label>
+                        <div>
+                            <input id="inputSearch" name="keyWords" type="search" placeholder="search" class="form-control input-md" ng-model="s.keyword">
+                        </div>
+                    </div>
+                    <div id="inputFields">
+                        <label id="searchLabel" for="minRent">Min Price</label>
+                        <div>
+                            <input id="inputSearch" name="minRent" type="number" placeholder="Min Price" class="form-control input-md" ng-model="s.minPrice">
+                        </div>
+                    </div>
+                    <div id="inputFields">
+                        <label id="searchLabel" for="maxPrice">Max Price</label>
+                        <div>
+                            <input id="inputSearch" name="maxPrice" type="number" placeholder="Max Price" class="form-control input-md" ng-model="s.maxPrice">
+                        </div>
+                    </div>
+                    <!-- Button -->
                     <div>
-                        <img ng-src="{{x.productImage}}">
+                        <button id="searchButton" name="Submit" class="btn btn-default" ng-click="s.searchProducts()">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div class="col-md-4" ng-repeat="x in s.response" id="searchResultsDiv">
+                <div class="panel panel-default">
+                    <div id="resultsHeader" class="panel panel-heading ">{{x.productTitle}}</div>
+                    <div id="resultsContainer" class="panel-body">
+                        <div>
+                            <img ng-src="{{x.productImage}}">
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-default" ui-sref="details({productDetailId: '{{x.productId}}'})">Details</button>
                     </div>
                 </div>
-                <div class="panel-footer">
-                    <button ui-sref="details({productDetailId: '{{x.productId}}'})">Details</button>
-                </div>
             </div>
+            <!--/.sidebar-offcanvas-->
         </div>
-        <!--/.sidebar-offcanvas-->
     </div>
+</div>
 </div>

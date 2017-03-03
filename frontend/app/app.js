@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('listIt', ['ui.router', 'LocalStorageModule', 'socialLogin', 'angular-filepicker'])
+        .module('listIt', ['ui.router', 'LocalStorageModule', 'socialLogin', 'angular-filepicker', 'oitozero.ngSweetAlert'])
         .value('backendUrl', 'http://localhost:57938//api/')
         .config(function($stateProvider, $urlRouterProvider, socialProvider, filepickerProvider) {
             filepickerProvider.setKey('A5XoolRK0QjS5Tvn2TXgiz');

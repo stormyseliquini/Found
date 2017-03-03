@@ -5,10 +5,10 @@
         .module('listIt')
         .controller('signInController', signInController);
 
-    signInController.$inject = ['socialLoginService', '$rootScope', 'signInFactory', 'localStorageService', '$state', 'localStorageFactory'];
+    signInController.$inject = ['socialLoginService', '$rootScope', 'signInFactory', 'localStorageService', '$state', 'localStorageFactory', 'SweetAlert'];
 
     /* @ngInject */
-    function signInController(socialLoginService, $rootScope, signInFactory, localStorageService, $state, localStorageFactory) {
+    function signInController(socialLoginService, $rootScope, signInFactory, localStorageService, $state, localStorageFactory, SweetAlert) {
         var si = this;
         si.title = 'signInController';
 
@@ -34,12 +34,13 @@
                                 setStorage('email', responseData.email);
                                 setStorage('userId', responseData.userId);
 
-
+                                swal("Welcome Back", "signed in successfully", "success")
                                 $state.go('home');
 
                                 return response;
                             } else { console.log("you suck") }
                             console.log(response);
+                            sweetAlert("Oops...", "The email and password are invalid", "error");
                         },
                         function(error) {
                             console.log(error);
@@ -58,12 +59,13 @@
 
         si.signout = function() {
             localStorageFactory.logout();
-            $state.go('home')
-
+            swal("success", "Come Back Soon", "success")
+            $state.go('signIn')
 
         }
         $rootScope.$on('event:social-sign-in-success', (event, userDetails) => {
             si.result = userDetails;
+            console.log(si.result)
             si.facebookSignIn = function() {
 
                 var email = userDetails.email;
@@ -71,26 +73,30 @@
                 var facebookInfo = {
 
                     'Email': email,
-                    'FbPassword': password
+                    'Password': password
 
                 }
                 signInFactory.signInCheck(facebookInfo).then(function(response) {
+
                     if (response.data[0] !== undefined) {
                         console.log("success")
                         console.log(response)
-                        localStorageService.set(responseData.userId)
+                        localStorageFactory.setLocalStorage("userId", response.data[0].userId)
+                        swal("Welcome Back", "signed in successfully", "success")
                         $state.go('home')
-                        console.log(isSignedIn)
-                    } else { console.log("you suck") }
+
+                    } else {
+                        console.log("you suck")
+                        sweetAlert("Oops...", "The email and password are invalid", "error");
+                    }
                     console.log(response);
+
                 });
             }
             si.facebookSignIn();
             //si.$apply();
         })
-        $rootScope.$on('event:social-sign-out-success', function(event, userDetails) {
-            si.result = userDetails;
-        })
+
 
 
 

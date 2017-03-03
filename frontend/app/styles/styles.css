@@ -49,8 +49,23 @@ h1 {
     padding: 1rem;
 }
 
+#iconDiv {
+    text-align: right;
+    vertical-align: center;
+    background-color: rgb(242, 247, 248);
+    padding: 1rem;
+}
+
+#copyRight {
+    text-align: left;
+}
+
 #fbIcon {
     padding-left: 80%;
+}
+
+#instaicon {
+    padding-left: 2%;
 }
 
 #about {
@@ -149,17 +164,18 @@ label {
     font-weight: 400;
 }
 
-#registrationheade,
-.panel-title,
-#searchLegend {
+#registrationheader,
+#signHeader,
+#searchHeader {
     font-family: Raleway;
-    font-size: 4em;
     font-weight: normal;
     text-align: center;
+    font-size: 3em;
 }
 
 #loginbox,
-#signinBox {
+#signinBox,
+#searchframe {
     margin-top: 50px;
     border-color: rgba(242, 247, 248, 0.7);
 }
@@ -174,37 +190,49 @@ label {
 #emailInput,
 #userNameInput,
 #passwordInput,
-#passwordConfrimInput {
+#passwordConfirmInput,
+#signInPass,
+#signInEmail,
+#inputFields {
     margin-bottom: 25px;
 }
 
 #registrationHeading,
 #inputRegistration,
 #inputSignIn,
-#signInHeading {
-    background: rgba(0, 0, 0, 0.5);
+#signInHeading,
+#searchHeading,
+#inputSearch,
+#resultsHeader {
+    background: rgba(25, 25, 25, 0.5);
     color: #fff;
     /* border: none;
  border-radius: 2
 */
 }
 
+#resultsHeader {
+    margin-bottom: 0;
+}
+
 #buttonsRegistration,
-#buttonSignIn {
+#buttonSignIn,
+#searchButton {
     border: none;
     font-family: Raleway;
-    background-color: rgba(242, 247, 248, 0.6);
+    background-color: rgba(255, 255, 255, .9);
     margin: 5px;
 }
 
 #buttonsRegistration:hover,
-#buttonSignIn:hover {
+#buttonSignIn:hover,
+#searchButton:hover {
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
 }
 
 .boxtext {
-    background-color: rgba(14, 20, 27, 0.52);
+    background-color: rgba(100, 100, 100, 0.52);
 }
 
 @media (min-width: 992px) grid-framework.less:72 .col-md-offset-3 {
@@ -216,16 +244,21 @@ label {
 
 #searchContainer,
 #searchLegend,
-#signinContianer {
-    background: rgba(0, 0, 0, 0.4);
+#signinContianer,
+#resultsContainer {
+    background: rgba(100, 100, 100, 0.52);
     color: #fff;
 }
 
-#signInLegend,
-legend {
-    font-family: Raleway;
-    font-size: 4em;
-    font-weight: normal;
-    text-align: center;
-    color: #fff;
+.input-group-addon:first-child {
+    background: rgba(255, 255, 255, .7)
+}
+
+.navbar-default {
+    background-color: rgb(242, 247, 248);
+    border-color: #e7e7e7;
+}
+
+#searchResultsDiv {
+    margin-bottom: 5%;
 }

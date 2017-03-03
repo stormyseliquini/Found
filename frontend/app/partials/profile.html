@@ -1,3 +1,50 @@
+<div class="container" ng-init="u.getUser()">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel panel-heading">{{u.details.userName}}</div>
+            <div class="panel-body">
+                <div>
+                    <div>
+                        <div>
+                            <img src="{{u.details.image}}">
+                            <button ng-show="editProfile" ng-click="u.pickFile()">Upload a photo</button>
+                        </div>
+                        <div>
+                            <p>Name:{{u.details.firstName}}</p>
+                            <input type="text" ng-show="editProfile" ng-model="u.details.firstName">
+                        </div>
+                        <div>
+                            <p>{{u.details.lastName}}</p>
+                            <input type="text" ng-show="editProfile" ng-model="u.details.lastName">
+                        </div>
+                        <div>
+                            <p>Email:{{u.details.email}}</p>
+                            <input type="text" ng-show="editProfile" ng-model="u.details.email">
+                        </div>
+                        <div>
+                            <p>Phone:{{u.details.phone}}</p>
+                            <input type="text" ng-show="editProfile" ng-model="u.details.phone">
+                        </div>
+                        <div>
+                            <p>Birthday:{{u.details.birthday}}</p>
+                            <input type="text" ng-show="editProfile" ng-model="u.details.birthday">
+                        </div>
+                        <br>
+                        <div ng-show="editProfile">
+                            <p> Your Password:{{u.details.password}}</p>
+                            <input type="password" ng-model="u.details.password">
+                            <button ng-click="u.updateProfile()">Update Password</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button ng-hide="editProfile" ng-click="editProfile=! editProfile">Edit</button>
+                <button ng-show="editProfile" ng-click="u.updateProfile()">Submit Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div ui-sref="home"></div>
 <button ng-hide="editing" ng-click="editing =! editing">Click to Add Product</button>
 <div ng-blur="editing =! editing" ng-show="editing">
@@ -25,7 +72,7 @@
         <option value="11">Other</option>
     </select>
     <input type="number" ng-model="u.price">price
-    <input type="filepicker-dragdrop" data-fp-multiple="true" name="whatever" data-fp-services="computer,facebook,webcam,box" ng-model="u.photoUrl" />
+    <button ng-click="u.pickFile()">Upload a photo</button>
     <button ng-click="u.addProduct()">add</button>
 </div>
 <div class="container" ng-controller="searchController as s" ng-init="s.searchProfileProducts()">
@@ -46,19 +93,19 @@
                 <div ng-blur="editProduct =! editProduct" ng-show="editProduct">
                     <div>
                         Title
-                        <input type="text" ng-model="u.editProductTitle">
+                        <input type="text" ng-model="x.productTitle">
                     </div>
                     <div>
                         Description
-                        <input type="text" ng-model="u.editDescription">
+                        <input type="text" ng-model="x.description">
                     </div>
                     <div>
                         Price
-                        <input type="number" ng-model="u.editPrice">
+                        <input type="number" ng-model="x.price">
                     </div>
                     <div>
                         Condition
-                        <select ng-model="u.editCondition">
+                        <select ng-model="x.condition">
                             <option value="Poor">Poor</option>
                             <option value="Fair">Fair</option>
                             <option value="Good">Good</option>
@@ -69,7 +116,7 @@
                     </div>
                     <div>
                         Category
-                        <select ng-model="u.editCategories">
+                        <select ng-model="x.category.categoryName">
                             <option value="1">Antique</option>
                             <option value="2">Appliances</option>
                             <option value="3">Bikes</option>
@@ -85,9 +132,9 @@
                     </div>
                     <div>
                         Image
-                        <input type="filepicker-dragdrop" data-fp-multiple="true" name="whatever" data-fp-services="computer,facebook,webcam,box" ng-model="u.editPhotoUrl" />
+                        <button ng-click="u.pickFile()">Upload a photo</button>
                     </div>
-                    <button ng-click="u.editProduct(x.productId);">submit</button>
+                    <button ng-click="u.editProduct(x.productId, x);">submit</button>
                 </div>
                 <div class="panel-footer">
                     <button ng-hide="editProduct" ng-click="editProduct =! editProduct">Edit</button>
