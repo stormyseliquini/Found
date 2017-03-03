@@ -87,11 +87,11 @@
                         Image
                         <input type="filepicker-dragdrop" data-fp-multiple="true" name="whatever" data-fp-services="computer,facebook,webcam,box" ng-model="u.editPhotoUrl" />
                     </div>
-                    <button ng-click="u.editProduct(x.productId);s.searchProfileProducts()">submit</button>
+                    <button ng-click="u.editProduct(x.productId);">submit</button>
                 </div>
                 <div class="panel-footer">
                     <button ng-hide="editProduct" ng-click="editProduct =! editProduct">Edit</button>
-                    <button ng-click="u.deleteProduct(x.productId)">Delete</button>
+                    <button ng-click="u.deleteBookmarkAndProduct(x.productId)">Delete</button>
                 </div>
             </div>
         </div>

@@ -46,6 +46,7 @@
             usersFactory.editProduct(productId, newProduct).then(function(response) {
                 console.log("ay lmao")
                 console.log(response)
+                $state.reload();
             }, function(error) {
                 console.log(error)
             })
@@ -58,18 +59,20 @@
             })
         }
 
-        u.deleteProduct = function(pId) {
-            u.deleteBookmarks(bId)
+        function deleteProduct(pId) {
+
 
             var productId = pId
-            console.log(productId)
+
             usersFactory.deleteProduct(productId).then(function(response) {
                 console.log(response)
+                $state.reload();
 
             }, function(error) {
                 console.log(error)
             })
         }
+
 
         u.getBookmarks = function() {
             var uId = {
@@ -77,9 +80,12 @@
             }
             bookmarksFactory.getBookmarks(uId).then(function(response) {
                 console.log(response)
-                vm.bookmarks = response.data
+                u.bookmarks = response.data
             })
         }
-
+        u.deleteBookmarkAndProduct = function(pId) {
+            var productId = pId
+            bookmarksFactory.deleteBookmarksFromProduct(productId).then(deleteProduct(productId))
+        }
     }
 })();

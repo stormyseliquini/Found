@@ -5,10 +5,10 @@
         .module('listIt')
         .controller('detailsController', detailsController);
 
-    detailsController.$inject = ['searchFactory', '$stateParams', '$state', 'messagesFactory', 'localStorageFactory'];
+    detailsController.$inject = ['searchFactory', '$stateParams', '$state', 'messagesFactory', 'localStorageFactory', 'bookmarksFactory'];
 
     /* @ngInject */
-    function detailsController(searchFactory, $stateParams, $state, messagesFactory, localStorageFactory) {
+    function detailsController(searchFactory, $stateParams, $state, messagesFactory, localStorageFactory, bookmarksFactory) {
         var d = this;
         d.title = 'detailsController';
         d.detailResponse = {};
@@ -45,10 +45,15 @@
                 function(error) {
                     console.log(error)
                 })
-
-
-
-
+        }
+        d.createBookmark = function(pId) {
+            var ob = {
+                ProductId: pId,
+                UserId: localStorageFactory.getLocalStorage("userId")
+            }
+            bookmarksFactory.createBookmark(ob).then(function(response) {
+                console.log(response)
+            })
         }
     }
 })();

@@ -124,13 +124,19 @@ namespace listItAPI.Controllers
 
         // DELETE: api/Bookmarks/5
         [Route("api/deleteBookmarks/pId")]
-        [HttpDelete]
-        public IQueryable<Bookmark> DeleteProBookmarks(int productId)
-        {
-            var results = db.Bookmarks.Where(b=>b.ProductId== productId);
 
-            return results;
+        public void deleteBookmarkFromProduct(int productId)
+        {
+            var marks = db.Bookmarks.Where(b => b.ProductId == productId);
+
+            foreach (var b in marks)
+            {
+                db.Bookmarks.Remove(b);
+            }
+
+            db.SaveChanges();
         }
+       
     }
 }
 
