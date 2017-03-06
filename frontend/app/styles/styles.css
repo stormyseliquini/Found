@@ -1,0 +1,360 @@
+img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: Raleway, sans-serif;
+}
+
+.main-header {
+    height: 800px;
+    background: url('/images/josh-pepper-71388.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.title {
+    margin-top: 24%;
+    line-height: 118%;
+    color: white;
+    font-size: 8.7em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .8);
+    margin-left: -35%;
+}
+
+#spanID {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#homePageInfo {
+    font-family: Lato, serif;
+    padding: 7%;
+}
+
+
+/**
+ * Footer Styles
+ */
+
+.footer {
+    position: absolute;
+    background-color: rgb(242, 247, 248);
+    text-align: center;
+}
+
+#footerTextLeft {
+    vertical-align: center;
+    background-color: rgb(242, 247, 248);
+    padding: 1rem;
+}
+
+#iconDiv {
+    text-align: right;
+    vertical-align: center;
+    background-color: rgb(242, 247, 248);
+    padding: 1rem;
+}
+
+#copyRight {
+    text-align: left;
+}
+
+#fbIcon {
+    padding-left: 80%;
+}
+
+#instaicon {
+    padding-left: 2%;
+}
+
+#about {
+    margin-left: -10%;
+}
+
+#browse {
+    margin-left: 10%;
+}
+
+#homepageDiv {
+    background-color: rgba(242, 247, 248, 0.7);
+}
+
+#BrowseHome {
+    font-size: 2em;
+    color: #000;
+}
+
+#BrowseHome:hover {
+    text-decoration: none;
+    color: #555;
+}
+
+
+/* Remove margins and padding from the list, and add a black background color */
+
+ul.topnav {
+    font-family: Raleway, sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+
+/* Float the list items side by side */
+
+ul.topnav #homeIcon {
+    float: left;
+}
+
+ul.topnav #rightAlign {
+    float: right;
+}
+
+
+/* Style the links inside the list items */
+
+ul.topnav li a {
+    display: inline-block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+
+/* Change background color of links on hover */
+
+ul.topnav li a:hover {
+    background-color: rgba(242, 247, 248, 0.7);
+}
+
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+
+ul.topnav li.icon {
+    display: none;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+
+/*Registration page*/
+
+#registerBox,
+#searchBox,
+#signInframe {
+    background: url('/images/josh-pepper-71388.jpg') no-repeat center;
+    height: 800px;
+    background-size: cover;
+}
+
+#registerLabel,
+#searchLabel,
+#signInLabel,
+label {
+    font-family: Lato;
+    color: #fff;
+    font-weight: 400;
+}
+
+#registrationheader,
+#signHeader,
+#searchHeader {
+    font-family: Raleway;
+    font-weight: normal;
+    text-align: center;
+    font-size: 3em;
+}
+
+#loginbox,
+#signinBox,
+#searchframe {
+    margin-top: 50px;
+    border-color: rgba(242, 247, 248, 0.7);
+}
+
+#panelBodyDiv {
+    padding-top: 30px;
+    /* font-family: Lato,
+ sans-serif;
+*/
+}
+
+#emailInput,
+#userNameInput,
+#passwordInput,
+#passwordConfirmInput,
+#signInPass,
+#signInEmail,
+#inputFields {
+    margin-bottom: 25px;
+}
+
+#registrationHeading,
+#inputRegistration,
+#inputSignIn,
+#signInHeading,
+#searchHeading,
+#inputSearch,
+#resultsHeader {
+    background: rgba(25, 25, 25, 0.5);
+    color: #fff;
+    /* border: none;
+ border-radius: 2
+*/
+}
+
+#resultsHeader {
+    margin-bottom: 0;
+}
+
+#buttonsRegistration,
+#buttonSignIn,
+#searchButton {
+    border: none;
+    font-family: Raleway;
+    background-color: rgba(255, 255, 255, .9);
+    margin: 5px;
+}
+
+#buttonsRegistration:hover,
+#buttonSignIn:hover,
+#searchButton:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.boxtext {
+    background-color: rgba(100, 100, 100, 0.52);
+}
+
+@media (min-width: 992px) grid-framework.less:72 .col-md-offset-3 {
+    margin-left: 9%;
+}
+
+
+/*SEARCH PAGE*/
+
+#searchContainer,
+#searchLegend,
+#signinContianer,
+#resultsContainer {
+    background: rgba(100, 100, 100, 0.52);
+    color: #fff;
+}
+
+.input-group-addon:first-child {
+    background: rgba(255, 255, 255, .7)
+}
+
+.navbar-default {
+    background-color: rgb(242, 247, 248);
+    border-color: #e7e7e7;
+}
+
+#searchResultsDiv {
+    margin-bottom: 5%;
+}
+
+#messageDiv {
+    margin: left;
+}
+
+#searchResultsDiv {
+    margin-bottom: 5%;
+    position: relative;
+    /*margin-top: 20%;
+*/
+    /*changed margin top */
+}
+
+#searchContainer,
+#searchLegend,
+#signinContianer,
+#resultsContainer {
+    background: rgba(100, 100, 100, 0.52);
+    color: #fff;
+    padding: 0;
+    /*changed padding to 0*/
+}
+
+#resultsContainer img {
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 200px;
+    /* change img margin*/
+}
+
+#singleSearchResult {
+    border-color: rgba(41, 87, 97, 0.21);
+    margin-bottom: 0;
+    /*created new id and gave border color*/
+}
+
+#resultsFooter {
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    margin-bottom: 0;
+    /* formatted footer, gave it a background color and took out margin */
+}
+
+
+/* Details styles, all of them are new */
+
+#detailsDiv {
+    margin-top: 30px;
+    margin-bottom: 65px;
+}
+
+#detailsPanelHeader {
+    background: rgba(25, 25, 25, 0.5);
+    color: #fff;
+}
+
+#detailsPanelBody {
+    padding: 5px;
+}
+
+#detailsPanelFooter {
+    background-color: #fff;
+    margin-bottom: 0;
+    border: none;
+}
+
+#profileContainer {
+    margin: auto;
+}
+
+#productDiv {
+    min-height: 500px;
+}
+
+#inputFields,
+#password {
+    color: #fff;
+    border-radius: 5px;
+}
+
+#profileBox {
+    font-family: Lato;
+    background-color: #fff;
+    box-shadow: none;
+}
+
+#profilebtn {
+    border-color: rgb(242, 247, 248);
+}
+
+#addProLabel {
+    color: #000;
+    font-family: Lato;
+}

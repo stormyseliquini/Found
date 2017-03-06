@@ -1,0 +1,233 @@
+<div ng-init="u.getUser()">
+    <div class="container" id="profileContainer">
+        <div class="row">
+            <div id="profileInfo" class="col-xs-12 col-sm-6 col-md-6 col-xs-offset-6 col-md-offset-3 col-md-offset-3">
+                <div class="well well-lg " style="background-color: #fff;">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <img src="{{u.details.image}} " id="profileImage" style=" max-width:50; position: center; border-radius: 80px;">
+                            <button class="btn btn-default " id="profilebtn" ng-show="editProfile " ng-click="u.pickFile() ">Upload a photo</button>
+                        </div>
+                        <div class="col-sm-6 col-md-8 ">
+                            <h4 style="font-size: 2em;">
+                            {{u.details.firstName}} {{u.details.lastName}}</h4>
+                            <input type="text " style="border-radius: 5px;" ng-show="editProfile " ng-model="u.details.firstName ">
+                            <input type="text " style="border-radius: 5px;" ng-show="editProfile " ng-model="u.details.lastName ">
+                        </div>
+                        <div class="col-sm-6 col-md-8 ">
+                            <i class="glyphicon glyphicon-envelope "></i> {{u.details.email}}
+                            <br/>
+                            <input type="text " style="border-radius: 5px;" ng-show="editProfile " ng-model="u.details.email ">
+                            <br />
+                            <i class="fa fa-phone " aria-hidden="true "></i> {{u.details.phone}}
+                            <br/>
+                            <input type="text " style="border-radius: 5px;" ng-show="editProfile " ng-model="u.details.phone ">
+                            <br />
+                            <i class="glyphicon glyphicon-gift "></i> {{u.details.birthday}}
+                            <br/>
+                            <input type="text " style="border-radius: 5px;" ng-show="editProfile " ng-model="u.details.birthday ">
+                            <div ng-show="editProfile ">
+                                <div>
+                                    Your Password:
+                                    <input type="password " style="border-radius: 5px;" ng-model="u.details.password ">
+                                </div>
+                                <br/>
+                                <button id="profilebtn" class="btn btn-default " ng-click="u.updateProfile() ">Update Password</button>
+                            </div>
+                            <!-- Split button -->
+                            <br/>
+                            <div>
+                                <button id="profilebtn" class="btn btn-default " ng-hide="editProfile " ng-click="editProfile=! editProfile ">Edit</button>
+                                <button id="profilebtn" class="btn btn-default " ng-show="editProfile " ng-click="u.updateProfile() ">Submit Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<hr size=5>
+<div>
+    <button id="profilebtn" class="btn btn-default col-xs-3 col-xs-offset-4" ng-hide="editing " ng-click="editing=! editing ">Click to Add Product</button>
+    <div ng-blur="editing=! editing " ng-show="editing ">
+        <div class="container-fluid " id="createProframe ">
+            <div class="row ">
+                <div class="mainbox col-xs-12 col-md-offset-3 col-sm-6 col-md-6 col-sm-offset-1 ">
+                    <div class="panel panel-info boxtext " id="addProContainer ">
+                        <div id="addProHeading " class="panel-heading " style="background-color: #fff;">
+                            <div id="addProLegend " class="panel-title " style="color:#000;">Add Product</div>
+                        </div>
+                        <div class="panel-body " style="background-color: #fff; color:#000;">
+                            <div style="display:none " id="login-alert " class="alert alert-danger col-sm-12 "></div>
+                            <form class="form-horizontal " role="form ">
+                                <div id="inputFields">
+                                    <div>
+                                        <label id="addProLabel " for="addProductTitle " style="color:#000; font-family: Lato;" placeholder="Product Title">Title</label>
+                                        <div>
+                                            <input ng-model="u.title " id="inputAddPro " class="form-control " name="addProductTitle " type="text ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="inputFields ">
+                                    <div>
+                                        <label id="addProLabel " for="description " style="color:#000; font-family: Lato;">Description</label>
+                                        <div>
+                                            <input type="text " ng-model="u.description " name="description " id="inputAddPro " class="form-control " placeholder="Product Description ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="inputFields">
+                                    <div>
+                                        <label id="addProLabel " for="condition " style="color:#000; font-family: Lato; margin-top: 25px;">Condition</label>
+                                        <div>
+                                            <select ng-model="u.condition " id="inputAddPro" class="form-control " name="condition ">
+                                                <option value="Poor ">Poor</option>
+                                                <option value="Fair ">Fair</option>
+                                                <option value="Good ">Good</option>
+                                                <option value="Like-New ">Like-New</option>
+                                                <option value="Excellent ">Excellent</option>
+                                                <option value="New ">New</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="inputFields">
+                                    <div>
+                                        <label id="addProLabel " for="categories " style="color:#000; font-family: Lato;">Categories</label>
+                                        <div>
+                                            <select ng-model="u.categories " id="inputAddPro" name="categories " class="form-control ">
+                                                <option value="1 ">Antique</option>
+                                                <option value="2 ">Appliances</option>
+                                                <option value="3 ">Bikes</option>
+                                                <option value="4 ">Boats</option>
+                                                <option value="5 ">Cars</option>
+                                                <option value="6 ">Books</option>
+                                                <option value="7 ">Phones</option>
+                                                <option value="8 ">Video Games</option>
+                                                <option value="9 ">Electronics</option>
+                                                <option value="10 ">Wanted</option>
+                                                <option value="11 ">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="inputFields ">
+                                    <div>
+                                        <label id="addProLabel " for="price " style="color:#000; font-family: Lato;">Price</label>
+                                        <div>
+                                            <input type="number " ng-model="u.price " id="inputAddPro " class="form-control " name="price " placeholder="Price ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="inputFields ">
+                                    <br>
+                                    <button id="profilebtn" class="btn btn-default " ng-click="u.pickFile() " id="addProButton " class="btn btn-default ">Upload a photo</button>
+                                </div>
+                                <div>
+                                    <br>
+                                    <button id="profilebtn" class="btn btn-default " ng-click="u.addProduct(data) " id="addProButton " class="btn btn-default ">Add</button>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<hr size=5>
+<div class="container " ng-controller="searchController as s" ng-init="s.searchProfileProducts() ">
+    <h1>Your Products!</h1>
+    <div>
+        <div class="col-md-4" ng-repeat="x in s.response">
+            <div class="panel panel-default">
+                <div class="panel panel-heading" style="background-color: #fff; color:#000; border: none;">{{x.productTitle}}</div>
+                <div class="panel-body " id="productDiv">
+                    <div>
+                        <img ng-src="{{x.productImage}} ">
+                        <p>Product Description:{{x.description}}</p>
+                        <p>Condition:{{x.condition}}</p>
+                        <p>Price: ${{x.price}}</p>
+                        <p>Category: {{x.category.categoryName}}</p>
+                    </div>
+                </div>
+                <div ng-blur="editProduct=! editProduct " ng-show="editProduct ">
+                    <div>
+                        Title
+                        <input type="text " ng-model="x.productTitle ">
+                    </div>
+                    <div>
+                        Description
+                        <input type="text " ng-model="x.description ">
+                    </div>
+                    <div>
+                        Price
+                        <input type="number " ng-model="x.price ">
+                    </div>
+                    <div>
+                        Condition
+                        <select ng-model="x.condition ">
+                            <option value="Poor ">Poor</option>
+                            <option value="Fair ">Fair</option>
+                            <option value="Good ">Good</option>
+                            <option value="Like-New ">Like-New</option>
+                            <option value="Excellent ">Excellent</option>
+                            <option value="New ">New</option>
+                        </select>
+                    </div>
+                    <div>
+                        Category
+                        <select ng-model="x.category.categoryName ">
+                            <option value="1 ">Antique</option>
+                            <option value="2 ">Appliances</option>
+                            <option value="3 ">Bikes</option>
+                            <option value="4 ">Boats</option>
+                            <option value="5 ">Cars</option>
+                            <option value="6 ">Books</option>
+                            <option value="7 ">Phones</option>
+                            <option value="8 ">Video Games</option>
+                            <option value="9 ">Electronics</option>
+                            <option value="10 ">Wanted</option>
+                            <option value="11 ">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        Image
+                        <button class="btn btn-default " ng-click="u.pickFile() ">Upload a photo</button>
+                    </div>
+                    <button class="btn btn-default " ng-click="u.editProduct(x.productId, x); ">submit</button>
+                </div>
+                <div class="panel-footer " style="background-color: #fff; color:#000;">
+                    <button id="profilebtn" class="btn btn-default " ng-hide="editProduct " ng-click="editProduct=! editProduct ">Edit</button>
+                    <button id="profilebtn" class="btn btn-default " ng-click="u.deleteBookmarkAndProduct(x.productId) ">Delete</button>
+                </div>
+            </div>
+        </div>
+        <!--/.sidebar-offcanvas-->
+    </div>
+</div>
+<br>
+<hr size=5>
+<div class="container " ng-init="u.getBookmarks() " style="margin-bottom: 45px">
+    <h1>Your Bookmarks!</h1>
+    <div class="col-md-4 " ng-repeat="data in u.bookmarks ">
+        <div class="panel panel-default ">
+            <div class="panel panel-heading " style=" background-color: #fff; color:#000; font-family: Lato;">{{data.product.productTitle}}</div>
+            <div class="panel-body " style=" background-color: #fff; color:#000; font-family: Lato; min-height: 500px;">
+                <div>
+                    <img ng-src=" {{data.product.productImage}} ">
+                    <p>Product Description:{{data.product.description}}</p>
+                    <p>Condition:{{data.product.condition}}</p>
+                    <p>Price: ${{data.product.price}}</p>
+                    <p>Category: {{data.product.category.categoryName}}</p>
+                </div>
+            </div>
+            <div class="panel-footer " style="background-color: #fff; color:#000; font-family: Lato;">
+                <button id="profilebtn " class="btn btn-default " ng-click="u.deleteBookmarks(data.bookmarkId) ">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

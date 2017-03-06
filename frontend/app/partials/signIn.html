@@ -1,0 +1,42 @@
+<div class="container-fluid" id="signInframe">
+    <div id="signinBox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-1">
+        <div class="panel panel-info boxtext" id="signinContianer">
+            <div id="signInHeading" class="panel-heading">
+                <div id="signInLegend" class="panel-title">Sign In</div>
+            </div>
+            <div id="panelBodyDiv" class="panel-body">
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                <form class="form-horizontal" role="form">
+                    <div id="inputFields">
+                        <div>
+                            <label id="signInLable" for="Email">Email</label>
+                            <div>
+                                <input id="inputSignIn" class="form-control" name="Email" type="email" placeholder="Email" ng-model="si.email">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label id="signInLable" for="Password">Password</label>
+                            <div>
+                                <input id="inputSignIn" class="form-control" name="Password" type="password" placeholder="Password" ng-model="si.password">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <br>
+                            <button id="buttonSignIn" class="btn btn-default" ng-click="si.signIn()">Sign In</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <br>
+                            <button id="buttonSignIn" fb-login type="button" ng-click="si.signIn" class="btn btn-default">Use Facebook LogIn</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

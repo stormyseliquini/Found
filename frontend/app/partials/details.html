@@ -1,0 +1,26 @@
+<div class="container">
+    <div>
+        <!-- change col offset -->
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default" id="detailsDiv" style="border: none;">
+                <div class="panel panel-heading " id="detailsPanelHeader" style=" background-color: #fff; color:#000; font-family: Lato; border: none;">{{d.detailResponse.productTitle}}</div>
+                <div class="panel-body" id="detailsPanelBody" style=" background-color: #fff; color:#000; font-family: Lato; min-height: 500px; ">
+                    <div>
+                        <img ng-src="{{d.detailResponse.productImage}}">
+                    </div>
+                    <div>
+                        <p>Product Description:{{d.detailResponse.description}}</p>
+                        <p>Condition:{{d.detailResponse.condition}}</p>
+                        <p>Price: ${{d.detailResponse.price}}</p>
+                        <p>Category: {{d.detailResponse.category.categoryName}}</p>
+                    </div>
+                </div>
+                <div class="panel-footer" id="detailsPanelFooter" style=" background-color: #fff; color:#000; font-family: Lato; ">
+                    <button ng-click="d.detailToMessage(d.detailResponse.userId)">Contact Seller</button>
+                    <button> <i class="fa fa-bookmark fa-lg" aria-hidden="true" ng-click="d.createBookmark(d.detailResponse.productId)"></i></button> bookmark
+                </div>
+            </div>
+        </div>
+        <!--/.sidebar-offcanvas-->
+    </div>
+</div>

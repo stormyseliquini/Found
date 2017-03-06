@@ -1,0 +1,85 @@
+<div id="searchBox" class="container-fluid">
+    <div id="searchframe" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-1">
+        <div class="panel panel-info boxtext" id="searcgContianer">
+            <div id="searchHeading" class="panel-heading">
+                <div id="searchHeader" class="panel-title">Search for a Product</div>
+            </div>
+            <div id="panelBodyDiv" class="panel-body">
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                <form class="form-horizontal" role="form">
+                    <div id="inputFields">
+                        <label id="searchLabel" for="conditionSelect">Select Condition</label>
+                        <div>
+                            <select id="inputSearch" name="conditionSelect" class="form-control" ng-model="s.condition">
+                                <option value="Poor" selected="selected">Poor</option>
+                                <option value="Fair">Fair</option>
+                                <option value="Good">Good</option>
+                                <option value="Like-New">Like-New</option>
+                                <option value="Excellent">Excellent</option>
+                                <option value="New">New</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Select Basic -->
+                    <div id="inputFields">
+                        <label id="searchLabel" for="categorySelect">Select Category</label>
+                        <div>
+                            <select id="inputSearch" name="categorySelect" class="form-control" ng-model="s.categories" placeholder="select category">
+                                <option value="Antique">Antique</option>
+                                <option value="Appliances">Appliances</option>
+                                <option value="Bikes">Bikes</option>
+                                <option value="Boats">Boats</option>
+                                <option value="Cars">Cars</option>
+                                <option value="Books">Books</option>
+                                <option value="Phones">Phones</option>
+                                <option value="Video Games">Video Games</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Wanted">Wanted</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Search input-->
+                    <div id="inputFields">
+                        <label id="searchLabel" for="keyWords">Search Keywords</label>
+                        <div>
+                            <input id="inputSearch" name="keyWords" type="search" placeholder="search" class="form-control input-md" ng-model="s.keyword">
+                        </div>
+                    </div>
+                    <div id="inputFields">
+                        <label id="searchLabel" for="minRent">Min Price</label>
+                        <div>
+                            <input id="inputSearch" name="minRent" type="number" placeholder="Min Price" class="form-control input-md" ng-model="s.minPrice">
+                        </div>
+                    </div>
+                    <div id="inputFields">
+                        <label id="searchLabel" for="maxPrice">Max Price</label>
+                        <div>
+                            <input id="inputSearch" name="maxPrice" type="number" placeholder="Max Price" class="form-control input-md" ng-model="s.maxPrice">
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div>
+                        <button id="searchButton" name="Submit" class="btn btn-default" ng-click="s.searchProducts()">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top:20px;">
+    <div>
+        <div class="col-md-4" ng-repeat="x in s.response" id="searchResultsDiv">
+            <div class="panel panel-default">
+                <div id="resultsHeader" class="panel panel-heading " style="background-color: white; color:#000; font-family: Lato;">{{x.productTitle}}</div>
+                <div id="resultsContainer" class="panel-body" style="background-color: white; color:#000; font-family: Lato;  min-height: 350px">
+                    <img ng-src="{{x.productImage}}">
+                </div>
+                <div class="panel-footer" style="background-color: white; color:#000; font-family: Lato;">
+                    <button class="btn btn-default" ui-sref="details({productDetailId: '{{x.productId}}'})">Details</button>
+                </div>
+            </div>
+        </div>
+        <!--/.sidebar-offcanvas-->
+    </div>
+</div>

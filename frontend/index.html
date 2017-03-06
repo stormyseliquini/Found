@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="listIt">
 
 <head>
     <meta charset="UTF-8">
-    <title>Gulp Demo</title>
+    <title>Found</title>
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
     <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/lobster/lobster.css" />
+    <link rel="stylesheet" href="bower_components/openSans/openSans.css" />
+    <link rel="stylesheet" href="bower_components/bowlbyOneSC/bowlbyOneSC.css" />
+    <link rel="stylesheet" href="bower_components/ubuntu/ubuntu.css" />
+    <link rel="stylesheet" href="bower_components/oswald/oswald.css" />
+    <link rel="stylesheet" href="bower_components/raleway/raleway.css" />
+    <link rel="stylesheet" href="bower_components/pacifico/pacifico.css" />
+    <link rel="stylesheet" href="bower_components/josefinSans/josefinSans.css" />
+    <link rel="stylesheet" href="bower_components/amaticSC/amaticSC.css" />
+    <link rel="stylesheet" href="bower_components/alegreya/alegreya.css" />
+    <link rel="stylesheet" href="bower_components/lato/lato.css" />
     <!-- endbower -->
     <!-- inject:css -->
+    <link rel="stylesheet" href="/app/styles/styles.css">
     <!-- endinject -->
 </head>
 
-<body>
+<body class="frame">
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -26,9 +38,56 @@
     <script src="bower_components/angular-filepicker/dist/angular_filepicker.js"></script>
     <script src="bower_components/angularjs-social-login/angularjs-social-login.js"></script>
     <!-- endbower -->
-    <h1>HEYA</h1>
+    <div ng-controller="signInController as si">
+        <ul class="topnav" id="myTopnav">
+            <li id="rightAlign"><a ng-click="si.signout()" onmouseover="" style="cursor: pointer;">logout</a></li>
+            <li id="rightAlign"><a ui-sref="signIn">sign in</a></li>
+            <li id="rightAlign"><a ui-sref="search">search</a></li>
+            <li id="rightAlign"><a ui-sref="register">register</a></li>
+            <li id="rightAlign"><a ui-sref="profile">profile</a></li>
+            <li id="rightAlign"><a ui-sref="messages">messages</a></li>
+            <li id="homeIcon"><a ui-sref="home">home</a></li>
+        </ul>
+        <!--         <ul ng-hide="notLoggedInNav" class="topnav" id="myTopnav">
+            <li id="rightAlign"><a ng-click="si.signout()" onmouseover="" style="cursor: pointer;">logout</a></li>
+            <li id="rightAlign"><a ui-sref="signIn">sign in</a></li>
+            <li id="rightAlign"><a ui-sref="search">search</a></li>
+            <li id="rightAlign"><a ui-sref="register">register</a></li>
+            <li id="rightAlign"><a ui-sref="profile">profile</a></li>
+            <li id="rightAlign"><a ui-sref="messages">messages</a></li>
+            <li id="homeIcon"><a ui-sref="home">home</a></li>
+        </ul> -->
+    </div>
+    <div ui-view>
+    </div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <div id="copyRight">
+                <p class="navbar-text pull-left">©2017 Found INC.
+                </p>
+            </div>
+            <div id="iconDiv">
+                <a id="fbicon" href="https://www.facebook.com/Foundcom-270446383391389/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                <a id="instaicon" href=href="https://www.instagram.com" target="_blank" "><i id="instaIcon " class="fa fa-instagram fa-2x " aria-hidden="true "></i></a>
+        </div>
+    </div>
     <!-- inject:js -->
-    <script src="/app/app.js"></script>
+    <script src="/app/app.js "></script>
+    <script src="/app/Controllers/bookmarks.controller.js "></script>
+    <script src="/app/Controllers/messages.controller.js "></script>
+    <script src="/app/Controllers/register.controller.js "></script>
+    <script src="/app/Controllers/search.controller.js "></script>
+    <script src="/app/Controllers/search.details.controller.js "></script>
+    <script src="/app/Controllers/signIn.controller.js "></script>
+    <script src="/app/Controllers/state.controller.js "></script>
+    <script src="/app/Controllers/users.controller.js "></script>
+    <script src="/app/Factories/bookmarks.factory.js "></script>
+    <script src="/app/Factories/localStorage.factory.js "></script>
+    <script src="/app/Factories/messages.factory.js "></script>
+    <script src="/app/Factories/register.factory.js "></script>
+    <script src="/app/Factories/search.factory.js "></script>
+    <script src="/app/Factories/signIn.factory.js "></script>
+    <script src="/app/Factories/users.factory.js "></script>
     <!-- endinject -->
 </body>
 
