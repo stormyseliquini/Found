@@ -21,7 +21,8 @@
             var registerObject = {
                 'UserName': r.userName,
                 'Email': r.email,
-                'Password': r.password
+                'Password': r.password,
+                'image': "/images/defaultuser.png"
             }
             if (r.passwordConfirm !== r.password) {
                 console.log("wRONG-ooooo");

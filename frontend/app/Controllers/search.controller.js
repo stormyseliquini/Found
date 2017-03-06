@@ -29,6 +29,11 @@
             } else {
                 searchFactory.searchItems(data).then(function(response) {
                     s.response = response.data;
+                    s.categories = ''
+                    s.keyword = ''
+                    s.condition = ''
+                    s.maxPrice = ''
+                    s.minPrice = ''
                     console.log(response);
                 })
             }

@@ -11,7 +11,7 @@
                         <label id="searchLabel" for="conditionSelect">Select Condition</label>
                         <div>
                             <select id="inputSearch" name="conditionSelect" class="form-control" ng-model="s.condition">
-                                <option value="Poor">Poor</option>
+                                <option value="Poor" selected="selected">Poor</option>
                                 <option value="Fair">Fair</option>
                                 <option value="Good">Good</option>
                                 <option value="Like-New">Like-New</option>
@@ -24,7 +24,7 @@
                     <div id="inputFields">
                         <label id="searchLabel" for="categorySelect">Select Category</label>
                         <div>
-                            <select id="inputSearch" name="categorySelect" class="form-control" ng-model="s.categories">
+                            <select id="inputSearch" name="categorySelect" class="form-control" ng-model="s.categories" placeholder="select category">
                                 <option value="Antique">Antique</option>
                                 <option value="Appliances">Appliances</option>
                                 <option value="Bikes">Bikes</option>
@@ -66,23 +66,20 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div>
-            <div class="col-md-4" ng-repeat="x in s.response" id="searchResultsDiv">
-                <div class="panel panel-default">
-                    <div id="resultsHeader" class="panel panel-heading ">{{x.productTitle}}</div>
-                    <div id="resultsContainer" class="panel-body">
-                        <div>
-                            <img ng-src="{{x.productImage}}">
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <button class="btn btn-default" ui-sref="details({productDetailId: '{{x.productId}}'})">Details</button>
-                    </div>
+</div>
+<div class="container" style="margin-top:20px;">
+    <div>
+        <div class="col-md-4" ng-repeat="x in s.response" id="searchResultsDiv">
+            <div class="panel panel-default">
+                <div id="resultsHeader" class="panel panel-heading " style="background-color: white; color:#000; font-family: Lato;">{{x.productTitle}}</div>
+                <div id="resultsContainer" class="panel-body" style="background-color: white; color:#000; font-family: Lato;  min-height: 350px">
+                    <img ng-src="{{x.productImage}}">
+                </div>
+                <div class="panel-footer" style="background-color: white; color:#000; font-family: Lato;">
+                    <button class="btn btn-default" ui-sref="details({productDetailId: '{{x.productId}}'})">Details</button>
                 </div>
             </div>
-            <!--/.sidebar-offcanvas-->
         </div>
+        <!--/.sidebar-offcanvas-->
     </div>
-</div>
 </div>

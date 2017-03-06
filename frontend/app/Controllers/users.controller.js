@@ -39,10 +39,20 @@
                 "Price": u.price,
                 "ProductImage": u.photoUrl
             }
-            usersFactory.addProduct(product).then(function(response) {
+            if (product.ProductImage == undefined) {
+                product.ProductImage = "/images/default.png";
+                usersFactory.addProduct(product).then(function(response) {
 
-                console.log(response);
-            })
+                    console.log(response);
+                    $state.reload();
+                })
+            } else {
+                usersFactory.addProduct(product).then(function(response) {
+
+                    console.log(response);
+                    $state.reload();
+                })
+            }
         }
         u.editProduct = function(pId, x) {
             var productId = pId

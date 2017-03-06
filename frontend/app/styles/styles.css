@@ -262,3 +262,99 @@ label {
 #searchResultsDiv {
     margin-bottom: 5%;
 }
+
+#messageDiv {
+    margin: left;
+}
+
+#searchResultsDiv {
+    margin-bottom: 5%;
+    position: relative;
+    /*margin-top: 20%;
+*/
+    /*changed margin top */
+}
+
+#searchContainer,
+#searchLegend,
+#signinContianer,
+#resultsContainer {
+    background: rgba(100, 100, 100, 0.52);
+    color: #fff;
+    padding: 0;
+    /*changed padding to 0*/
+}
+
+#resultsContainer img {
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 200px;
+    /* change img margin*/
+}
+
+#singleSearchResult {
+    border-color: rgba(41, 87, 97, 0.21);
+    margin-bottom: 0;
+    /*created new id and gave border color*/
+}
+
+#resultsFooter {
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    margin-bottom: 0;
+    /* formatted footer, gave it a background color and took out margin */
+}
+
+
+/* Details styles, all of them are new */
+
+#detailsDiv {
+    margin-top: 30px;
+    margin-bottom: 65px;
+}
+
+#detailsPanelHeader {
+    background: rgba(25, 25, 25, 0.5);
+    color: #fff;
+}
+
+#detailsPanelBody {
+    padding: 5px;
+}
+
+#detailsPanelFooter {
+    background-color: #fff;
+    margin-bottom: 0;
+    border: none;
+}
+
+#profileContainer {
+    margin: auto;
+}
+
+#productDiv {
+    min-height: 500px;
+}
+
+#inputFields,
+#password {
+    color: #fff;
+    border-radius: 5px;
+}
+
+#profileBox {
+    font-family: Lato;
+    background-color: #fff;
+    box-shadow: none;
+}
+
+#profilebtn {
+    border-color: rgb(242, 247, 248);
+}
+
+#addProLabel {
+    color: #000;
+    font-family: Lato;
+}
